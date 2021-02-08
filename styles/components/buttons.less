@@ -1,0 +1,90 @@
+.btn {
+	padding: 0.5em 1em;
+	border-radius: 0;
+	border: 1px solid @mid-grey;
+	background: transparent;
+	font-family: @font-sans;
+	font-size: 18px;
+	font-weight: 400;
+	color: @dark-grey;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: none;
+		color: @primary;
+		border-color: @primary;
+		text-decoration: none;
+	}
+}
+
+// Font-size for buttons; overwriting Bootstrap
+.btn.btn {
+	font-size: @link-size;
+}
+
+.btn-primary {
+	background: @primary;
+	border-color: @primary;
+	color: @contrast;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: @primary-text !important;
+		border-color: @primary-text !important;
+		color: @contrast;
+	}
+}
+
+.btn-light {
+	border-color: @light-grey;
+	color: @light-grey;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: @light-grey;
+		color: @dark-grey;
+	}
+}
+
+.btn-primary-bg {
+	background: @light-grey;
+	border-color: @light-grey;
+	color: @dark-grey;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: @light-grey;
+		border-color: @dark-grey;
+		color: @dark-grey;
+	}
+}
+
+.btn-link {
+	border-color: transparent;
+	font-weight: 400;
+	color: @primary;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: transparent;
+		color: @primary-text;
+	}
+}
+
+.btn-text {
+	.btn-link;
+	color: @dark-grey;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: @primary;
+	}
+}

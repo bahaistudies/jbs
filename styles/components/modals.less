@@ -1,0 +1,68 @@
+.modal-dialog {
+	max-width: 540px;
+}
+
+.modal-header {
+	border-color: @contrast;
+}
+
+.modal-content {
+	border-radius: 0;
+	background: @primary;
+	color: @contrast;
+
+	.close {
+		color: @contrast;
+		text-shadow: none;
+		opacity: 1;
+	}
+
+	a {
+		color: @contrast;
+		text-decoration: underline;
+
+		&:hover,
+		&:focus {
+			color: @contrast;
+		}
+	}
+
+	.btn-primary {
+		.btn-primary-bg;
+	}
+
+	.btn-link {
+		color: @contrast;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @contrast;
+			border-color: @contrast;
+		}
+	}
+
+	.form-control {
+	  background: transparent;
+	  border-color: @contrast;
+		color: @contrast;
+	}
+
+	@media (min-width: 992px) {
+		padding: 4rem;
+
+		.close {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.8rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+
+	#loginModal .close {
+		top: -2.5rem;
+		right: -2rem;
+	}
+}

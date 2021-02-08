@@ -1,0 +1,63 @@
+/**
+ * @file styles/typography.less
+ *
+ * Copyright (c) 2014-2020 Simon Fraser University
+ * Copyright (c) 2003-2020 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief general site-wide typography
+ *
+ */
+
+body {
+	font-family: @font-sans;
+	font-weight: 400;
+	font-size: 16px;
+	color: @dark-grey;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: @font-serif;
+}
+
+a {
+	color: @primary-text;
+
+	&:hover,
+	&:focus {
+  		color: @primary;
+	}
+}
+
+// Font-size for page content paragraphs and list items
+.page-content {
+	p, li {
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+
+/* Styling font-size for all headers;
+* every next `h*` element will be smaller then previous in order
+*/
+
+.headerSize(@h_count) when (@h_count < 7) {
+	h@{h_count} {
+		font-size: (@page-header-size - (@page-header-size/10*@h_count) + @page-header-size/10);
+	}
+	.headerSize(@h_count + 1);
+}
+
+.headerSize(1);
+
+// Do not display elements with this class
+.hidden {
+	display: none;
+}
+
+// Appears on message and error pages
+.cmp_back_link {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

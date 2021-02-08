@@ -1,0 +1,217 @@
+/**
+ * @file styles/pages/page-home.less
+ *
+ * Copyright (c) 2014-2020 Simon Fraser University
+ * Copyright (c) 2003-2020 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief journal index page
+ */
+
+.homepage-image {
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.container-homepage-issue {
+	margin-top: 2rem;
+	border: 0;
+}
+
+.homepage-announcement {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.homepage-announcement-date {
+	font-weight: 400;
+	font-size: 75%;
+	color: @mid-grey;
+}
+
+.homepage-issue-current,
+.homepage-issue-identifier,
+.homepage-issue-published {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.homepage-issue-published {
+	font-family: @font-sans;
+}
+
+.homepage-issue-cover {
+	display: block;
+	max-width: 210px;
+	max-height: 315px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+}
+
+.homepage-issue-description {
+	position: relative;
+	max-height: 500px;
+	overflow-y: hidden;
+	padding-bottom: 4rem;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100px;
+		background-image: linear-gradient(rgba(255,255,255,0), #fff 20%);
+	}
+}
+
+.homepage-issue-description-more {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	bottom: 2rem;
+}
+
+.homepage-journal-description.long-text {
+	position: relative;
+	overflow-y: hidden;
+	max-height: 210px;
+}
+
+.homepage-description-buttons {
+	margin-top: 30px;
+}
+
+#homepageDescriptionMore, #homepageDescriptionLess {
+	color: @primary-text;
+	cursor: pointer;
+}
+
+.homepage-issue-galleys {
+	padding-bottom: 2rem;
+}
+
+.homepage-additional-content {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+
+.homepage-issue-identifier {
+	font-size: 24px;
+}
+
+@media(min-width: 992px) {
+
+	.homepage-issue-header {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.homepage-issue-cover {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+	}
+
+	.homepage-issue-description-wrapper {
+		padding: 3rem;
+		background: @light-grey;
+	}
+
+	.homepage-issue-description {
+		max-height: 15em;
+
+		&:after {
+			background-image: linear-gradient(rgba(255,255,255,0), @light-grey 20%);
+		}
+
+		.h2 {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.homepage-issue-galleys {
+		padding-bottom: 0;
+	}
+}
+
+@media(min-width: 1200px) {
+
+	.homepage-image-behind-issue {
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		max-height: 500px;
+		overflow-y: hidden;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.4);
+		}
+	}
+
+	.homepage-image-behind-issue + .container-homepage-issue {
+
+		.homepage-issue-current,
+		.homepage-issue-identifier,
+		.homepage-issue-published {
+			color: #fff;
+			text-shadow: 0 0 2px @black;
+		}
+
+		.homepage-issue-current {
+			margin-top: 3rem;
+		}
+
+		.homepage-issue-published {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+		}
+	}
+
+	.issue-only-image {
+		margin-top: 320px;
+	}
+
+	.issue-image-cover {
+		margin-top: 150px;
+	}
+
+	.issue-full-data {
+		margin-top: 0;
+	}
+}
+
+@media(min-width: 1400px) {
+
+	.homepage-image-behind-issue + .container-homepage-issue {
+
+		.homepage-issue-current {
+			margin-top: 4.5rem;
+		}
+
+		.homepage-issue-published {
+			margin-top: 4.5rem;
+			margin-bottom: 4.5rem;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.homepage-description-buttons {
+		margin-bottom: 30px;
+	}
+}

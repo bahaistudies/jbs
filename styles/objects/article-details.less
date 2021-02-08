@@ -1,0 +1,403 @@
+.article-details-issue-identifier {
+	margin-bottom: 0.5em;
+	font-family: @font-serif;
+	color: @mid-grey;
+
+	a {
+		text-decoration: none;
+		color: @mid-grey;
+
+		&:hover,
+		&:focus {
+			color: @mid-grey;
+		}
+	}
+}
+
+.article-details h1 {
+	font-size: 2rem;
+}
+
+.article-details-issue-section,
+.article-details-doi,
+.article-details-published {
+	margin-top: 1em;
+	font-size: 0.9rem;
+	line-height: 1.6em;
+	color: @mid-grey;
+}
+
+@media (max-width: 991px){
+	.authors-string {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.article-details-author.hideAuthor {
+		display: none;
+	}
+}
+
+// Article details section
+.article-details-issue-section {
+	text-transform: uppercase;
+}
+
+.article-details-block,
+.article-details .item {
+	margin-bottom: 3rem;
+}
+
+.article-details-heading,
+.article-details .item > .label {
+	color: @mid-grey;
+}
+
+.article-details-cover {
+	max-width: 210px;
+}
+
+.article-details-author {
+	margin-bottom: 1rem;
+}
+
+.article-details-author-affiliation {
+	font-size: 0.9rem;
+	color: @mid-grey;
+}
+
+.article-details-author-orcid {
+	font-size: 0.8rem;
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @mid-grey;
+		}
+	}
+}
+
+.article-details-bio-toggle {
+	padding: 0;
+	font-size: 0.9rem;
+	color: @primary;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: @mid-grey;
+	}
+}
+
+.article-details-galley:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+
+.article-details-galleys-supplementary .article-details-heading {
+	margin-bottom: 14px;
+}
+
+.article-details-how-to-cite-citation {
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem
+}
+
+// Hide the bibliography number produced by some CSL styles
+.article-details-how-to-cite .csl-left-margin {
+	display: none;
+}
+
+.csl-entry {
+	word-break: break-word;
+}
+
+.article-details-license {
+	margin-top: 60px;
+	font-size: 0.9rem;
+}
+
+.article-details-galleys-btm {
+	display: none;
+}
+
+.article-details-abstract {
+	line-height: 1.8em;
+}
+
+.article-details-references-value p {
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (min-width: 992px) {
+	.small-screen {
+		display: none;
+	}
+
+	// Special treatment for authors blocks (article's header and details)
+	.authors-string {
+		margin-top: 1em;
+		margin-bottom: 1em;
+		padding-left: 0;
+
+		& li {
+			display: inline;
+			list-style-type: none;
+
+			&:not(:last-child):after {
+				content: ", ";
+			}
+		}
+
+		& .author-string-href {
+			color: @dark-grey;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: none;
+				color: @primary;
+			}
+		}
+	}
+
+	.orcidImage {
+		margin-left: 3px;
+		margin-right: 1px;
+	}
+
+	.author-string-href.active {
+		color: @primary;
+	}
+
+	.author-symbol {
+		font-family: sans-serif;
+		font-weight: bold;
+		margin-left: 2px;
+		color: @primary;
+
+		&.hide {
+			display: none;
+		}
+	}
+
+	.article-details-issue-identifier {
+		margin-bottom: 1em;
+		font-size: 1.1em;
+		line-height: 1.6em;
+	}
+
+	.article-details h1 {
+		font-size: 2.5rem;
+	}
+
+	.article-details-main {
+		padding: 3rem 6rem;
+		background: @light-grey;
+
+		.article-details-heading,
+		.item > .label {
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+			color: @dark-grey;
+		}
+
+		.article-details-block:last-child,
+		.item:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.article-details-galleys-btm {
+		display: block;
+	}
+
+	.galleys-without-abstract div {
+		display: block;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.article-details-galleys-sidebar {
+		display: none;
+	}
+
+	.article-details-galley {
+		display: inline-block;
+	}
+
+	.article-details-galley:not(:last-child) {
+		margin-bottom: 0;
+	}
+
+	.article-details-references-value {
+		font-size: 0.9rem;
+	}
+
+	.article-footer-hook {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	.large-screen, .author-symbol {
+		display: none;
+	}
+
+	.article-details-galley {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 0.3rem;
+		}
+	}
+
+	.article-details-keywords-value {
+		& br {
+			display: none;
+		}
+
+		& span:not(:last-child):after {
+			content: ", ";
+		}
+	}
+
+	.article-blocks-mobile {
+
+		display: flex;
+		flex-direction: column;
+
+		& > .article-details-cover {
+			display: none;
+		}
+
+		& > .article-details-galleys {
+			order: 1;
+		}
+
+		& > .article-details-galleys-supplementary {
+			order: 2;
+		}
+
+		& > .article-details-abstract {
+			order: 3;
+		}
+
+		& > .article-details-doi.small-screen {
+			order: 4;
+		}
+
+		& > .article-details-pubid {
+			order: 5;
+		}
+
+		& > .article-details-keywords {
+			order: 6;
+		}
+
+		& > .article-details-how-to-cite {
+			order: 7;
+		}
+
+		& > .article-details-references {
+			order: 8;
+		}
+
+		& > .article-details-license {
+			order: 9;
+		}
+
+		// Ensure that all elements from the sidebar hook will be appear last.
+		& > * {
+			order: 10;
+			margin-bottom: 40px;
+			margin-top: 0;
+		}
+	}
+
+	.article-meta-mobile {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article-details-issue-section {
+		order: 1;
+		& a {
+			color: @mid-grey;
+		}
+	}
+
+	.article-details-published {
+		order: 2;
+		margin-top: 0;
+	}
+
+	.article-details-fulltitle {
+		order: 3;
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+
+	.article-details-authors {
+		order: 4;
+	}
+
+	.article-details-abstract + .article-details-doi {
+		margin-top: -30px;
+	}
+
+
+}
+
+// Recommend author
+#articlesBySameAuthorList {
+	margin-bottom: 40px;
+
+	& ul {
+		list-style: none;
+		padding-left: 32px;
+		margin-top: 25px;
+	}
+}
+
+#articlesBySameAuthorList li {
+	position: relative;
+	margin-bottom: 20px;
+
+	&:before {
+		content: '';
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-left: 10px solid @primary-text;
+		position: absolute;
+		height: 10px;
+		left: -30px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto
+	}
+}
+
+#articlesBySameAuthorList a {
+	z-index: 2;
+	position: relative;
+}
+
+#articlesBySameAuthorPages {
+	display: flex;
+	margin-top: 40px;
+
+	& a, strong {
+		border: 1px solid @mid-grey;
+		display: block;
+		padding: 5px 8px;
+	}
+}

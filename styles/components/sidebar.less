@@ -1,0 +1,77 @@
+.site-footer-sidebar {
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+}
+
+.pkp_block {
+	
+	padding: 15px;
+
+	.title {
+		display: block;
+		margin-bottom: 0.5em;
+		font-size: 24px;
+	}
+}
+
+.block_make_submission .block_make_submission_link {
+	.btn;
+	.btn-light;
+	display: inline-block;
+	background-color: white;
+	color: @black;
+	
+	&:focus, &:hover {
+		background-color: @dark-grey;
+		border-color: white;
+		color: white;
+	}
+}
+
+.block_information ul,
+.block_language ul,
+.block_announcement_feed ul,
+.block_external_feed ul,
+.block_web_feed ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media (min-width: 992px) {
+
+	.site-footer-sidebar .row {
+		justify-content: flex-start;
+	}
+
+	.pkp_block {
+		flex: 0 0 25%;
+		width: 25%;
+
+			& + .pkp_block {
+				margin-top: 0;
+			}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.pkp_block {
+		flex: 0 0 50%;
+		width: 50%;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.site-footer-sidebar .row {
+		flex-direction: column;
+	}
+	
+	.pkp_block {
+		flex: 0 0 100%;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
