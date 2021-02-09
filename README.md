@@ -1,14 +1,14 @@
-# Health Sciences Theme
+# JBS Theme
 
-An official theme for [OJS 3.1.1+](https://pkp.sfu.ca/ojs/) designed for health science journals or any journal that wants a clean, modern appearance.
+A fork of an official theme for [OJS 3.1.1+](https://pkp.sfu.ca/ojs/) that was designed for health science journals or any journal that wants a clean, modern appearance. This fork includes more thourough metadata, accessibility tweaks and aesthetic changes. 
 
-Current version: healthSciences v1.0.7.0
+This theme is used by the [Journal of Bahá’í Studies](https://journal.bahaistudies.ca/) under the [Association for Bahá’í Studies—North America](https://bahaistudies.ca/)
 
-This theme was commissioned and is maintained by the [Public Knowledge Project](https://pkp.sfu.ca/). For all non-technical questions, please visit the [PKP Forum](https://forum.pkp.sfu.ca/). 
+The original theme was commissioned and is maintained by the [Public Knowledge Project](https://pkp.sfu.ca/). For all non-technical questions, please visit the [PKP Forum](https://forum.pkp.sfu.ca/). 
 
 ## Demonstration 
 
-You can see a demonstration of this theme on the [PKP website](https://demo.publicknowledgeproject.org/ojs3/demo/index.php/health-sciences).
+You can see a demonstration of the original theme on the [PKP website](https://demo.publicknowledgeproject.org/ojs3/demo/index.php/health-sciences).
 
 ## Installation
 
@@ -80,19 +80,17 @@ If you'd like to use unreleased packages, you can clone this repository or follo
 
 ## Contribution
 
-This theme was designed by Sophy Ouch (@sssoz) and built by Nate Wright (@NateWr) and Vitalii Bezsheiko (@Vitaliy-1) using [Bootstrap4](https://getbootstrap.com/).
+The original theme was designed by Sophy Ouch (@sssoz) and built by Nate Wright (@NateWr) and Vitalii Bezsheiko (@Vitaliy-1) using [Bootstrap4](https://getbootstrap.com/).
 
-## Contributions
-
-We welcome code contributions from the community at https://github.com/pkp/healthSciences/. Non-technical questions should be directed to the community forum at https://forum.pkp.sfu.ca/.
+Adaptations for use with the [Journal of Bahá’í Studies](https://journal.bahaistudies.ca/) were made by Ben Altair (@benaltair) for the [Association for Bahá’í Studies—North America](https://bahaistudies.ca/).
 
 ## Feedback
-Suggestions for improving this guide can be made to support@publicknowledgeproject.org. 
+Suggestions for improving this guide can be made to webmaster@bahaistudies.ca. 
 
 ## License
-This theme is released under the GPL license. 
+The original theme was released under the GPL license. 
 
-## Changelog
+## Original Changelog
 **healthSciences v1.0.7.0** (2020-06-19)
 * Fix: Page numbers are aligned right in TOC when author names are omitted (#149)
 * Fix: Text align for right-to-left scripts (#182)
