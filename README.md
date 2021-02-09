@@ -8,7 +8,7 @@ The original theme was commissioned and is maintained by the [Public Knowledge P
 
 ## Demonstration 
 
-You can see a demonstration of the original theme on the [PKP website](https://demo.publicknowledgeproject.org/ojs3/demo/index.php/health-sciences).
+You can see a demonstration of the original theme on the [PKP website](https://demo.publicknowledgeproject.org/ojs3/demo/index.php/health-sciences). The live site is accessible on the [Journal of Bahá’í Studies website](https://journal.bahaistudies.ca/).
 
 ## Installation
 
