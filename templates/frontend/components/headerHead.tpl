@@ -41,7 +41,7 @@
 <meta name="theme-color" content="#7d0505"/>
 <link rel="preconnect" href="https://fonts.gstatic.com"/>
 {* CDN Configuration *}
-<meta property="ix:host" content="abs.imgix.net"/>
-<script src="/public/lib/imgix.js"></script>
+{* <meta property="ix:host" content="abs.imgix.net"/>
+ <script src="/public/lib/imgix.js"></script> *}
 </head>
      
