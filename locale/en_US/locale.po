@@ -42,7 +42,7 @@ msgid "plugins.themes.healthSciences.more"
 msgstr "{$text}…"
 
 msgid "plugins.themes.healthSciences.article.authorBio"
-msgstr "Bio"
+msgstr "Open Bio"
 
 msgid "plugins.themes.healthSciences.article.supplementaryFiles"
 msgstr "Supplementary Files"
