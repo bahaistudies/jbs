@@ -19,8 +19,7 @@
 {if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
 {/if}
-
-<div class="article-summary" {if $journal}onclick="location.href='{url journal=$journal->getPath() page="article" op="view" path=$articlePath}';"{else}onclick="location.href='{url page="article" op="view" path=$articlePath}';"{/if}>
+<div class="article-summary">
 
 	{if $showAuthor && $article->getPages()}
 		<div class="row">
@@ -42,7 +41,7 @@
 	{/if}
 
 	<div class="article-summary-title">
-		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if}>
+		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="article-link">
 			{$article->getLocalizedFullTitle()|escape}
 		</a>
 	</div>
