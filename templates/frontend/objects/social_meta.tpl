@@ -23,6 +23,7 @@
 {if $pubId}
     {assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
 <meta property="og:url" content="{$doiUrl}"/>
+<link rel="canonical" href="{$doiUrl}"/>
 {else}
     <meta property="og:url" content="{$currentUrl}"/>
 {/if}

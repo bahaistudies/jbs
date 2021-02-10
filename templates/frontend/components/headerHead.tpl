@@ -13,9 +13,6 @@
 <head>
 <meta charset="{$defaultCharset|escape}"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{if $requestedPage=='article' && $requestedOp=='view' && $article && $currentJournal}
-    <link rel="canonical" href="{url page="article" op="view" path=$article->getBestArticleId($currentJournal)}"/>
-{/if}
 {strip}
     <title>{$pageTitleTranslated|strip_tags}{if $requestedPage|escape|default:"index" != 'index' && $currentContext && $currentContext->getLocalizedName()} | {$currentContext->getLocalizedName()}{/if}</title>
 {/strip}
@@ -25,6 +22,7 @@
 {include file="frontend/objects/social_meta.tpl"}
 {* Include JSON Schema.org metadata *}
 {include file="frontend/objects/schema_json_ld.tpl"}
+<link rel="prefetch" href="/product-details.html" as="document">
 {* Twitter DO-NOT-TRACK enabled *}
 <meta name="twitter:dnt" content="on"/>
 {* Aplication Data *}
