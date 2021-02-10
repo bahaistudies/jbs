@@ -18,7 +18,7 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="common.search"}
 
-<div class="container page-search">
+<div class="container page-search" data-instant-allow-query-string>
 	<div class="page-header">
 		<h1>
 			{if $query}
