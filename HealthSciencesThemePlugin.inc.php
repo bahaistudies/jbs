@@ -107,8 +107,8 @@ class HealthSciencesThemePlugin extends ThemePlugin {
 		}
 
 		// Add JQuery UI and tag-it libraries for registration page (reviewer's interests)
-		$this->addScript("jquery-ui", "libs/jquery-ui.min.js");
-		$this->addScript("tag-it", "libs/tag-it.min.js");
+		$this->addScript("jquery-ui", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js");
+		$this->addScript("tag-it", "https://cdnjs.cloudflare.com/ajax/libs/tag-it/2.0/js/tag-it.min.js");
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
