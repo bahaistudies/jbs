@@ -22,7 +22,6 @@
 {include file="frontend/objects/social_meta.tpl"}
 {* Include JSON Schema.org metadata *}
 {include file="frontend/objects/schema_json_ld.tpl"}
-<link rel="prefetch" href="/product-details.html" as="document">
 {* Twitter DO-NOT-TRACK enabled *}
 <meta name="twitter:dnt" content="on"/>
 {* Aplication Data *}
