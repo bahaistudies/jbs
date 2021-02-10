@@ -25,7 +25,7 @@
                     "logo": {
                         "@type": "ImageObject",
                         "name": "JBSLogo",
-                        "url": "https://abs.imgix.net/public/images/jbs-black.png"
+                        "url": "{$cdn}/public/images/jbs-black.png"
                     },
                     "url": "https://journal.bahaistudies.ca/",
                     "sameAs": [
@@ -42,7 +42,7 @@
                         "logo": {
                             "@type": "ImageObject",
                             "name": "ABSLogo",
-                            "url": "https://abs.imgix.net/public/images/abs-black.png?"
+                            "url": "{$cdn}/public/images/abs-black.png?"
                         },
                         "address":{
                             "@type" : "PostalAddress",
@@ -76,7 +76,7 @@
                         "issn": [{if $printIssn}"{$printIssn}"{/if}{if $printIssn && $onlineIssn}, {/if}{if $onlineIssn}"{$onlineIssn}"{/if}
                         ],
                         "image": {
-                        "https://abs.imgix.net/public/icons/jbs-mockup.png"
+                        "{$cdn}/public/icons/jbs-mockup.png"
                        },
                         "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
                         "copyrightHolder" :{
@@ -116,7 +116,7 @@
                                                 "name": "{$article->getLocalizedTitle($article->getLocale())|strip_tags:false|escape|strip|truncate:110}"
                                             },
                                             "image": {
-                                            "https://abs.imgix.net/public/icons/jbs-mockup.png"
+                                            "{$cdn}/public/icons/jbs-mockup.png"
                                            },
                                             {*"@id": "{url page="article" op="view" path=$article->getId()}",*}
                                             "url": "{url page="article" op="view" path=$article->getId()}",
@@ -224,9 +224,9 @@
 {if $issue->getLocalizedCoverImageUrl()}
                             "{$issue->getLocalizedCoverImageUrl()|escape}"
 {elseif $issue->getIssueSeries()}
-                            "https://abs.imgix.net/public/images/blank-cover.png?w=400&h=600&mark64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvamJzLXdoaXRlLnBuZw&mark-align=middle%2Ccenter&mark-w=0.80&mark-y=106&txt={$issue->getIssueSeries()}&txt-font=PTSerif-Regular&txt-color=fff&txt-align=middle%2Ccenter&txt-size=22&txt-clip=ellipsis&auto=format&exp=-10&hue=132&bg=00395B&blend64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvZmxvdXJpc2gucG5nP2ludmVydD10cnVlJnJvdD0xODA&blend-align=bottom%2Ccenter&blend-w=0.30&blend-mode=normal&blend-y=203"
+                            "{$cdn}/public/images/blank-cover.png?w=400&h=600&mark64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvamJzLXdoaXRlLnBuZw&mark-align=middle%2Ccenter&mark-w=0.80&mark-y=106&txt={$issue->getIssueSeries()}&txt-font=PTSerif-Regular&txt-color=fff&txt-align=middle%2Ccenter&txt-size=22&txt-clip=ellipsis&auto=format&exp=-10&hue=132&bg=00395B&blend64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvZmxvdXJpc2gucG5nP2ludmVydD10cnVlJnJvdD0xODA&blend-align=bottom%2Ccenter&blend-w=0.30&blend-mode=normal&blend-y=203"
 {else}
-                            "https://abs.imgix.net/public/icons/jbs-mockup.png"
+                            "{$cdn}/public/icons/jbs-mockup.png"
 {/if}
                            ,
                             "isPartOf":
