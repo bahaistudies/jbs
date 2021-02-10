@@ -19,7 +19,6 @@
 {if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
 {/if}
-
 <div class="article-summary">
 
 	{if $showAuthor && $article->getPages()}
@@ -42,7 +41,7 @@
 	{/if}
 
 	<div class="article-summary-title">
-		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if}>
+		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}" {else}href="{url page="article" op="view" path=$articlePath}"{/if} class="article-link">
 			{$article->getLocalizedFullTitle()|escape}
 		</a>
 	</div>
@@ -63,7 +62,7 @@
 			{if $pubId}
 				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
 				<div class="article-summary-doi">
-					<a href="{$doiUrl}">{$doiUr}</a>
+					<a href="{$doiUrl}" class="clickable" data-no-instant>{$doiUr}</a>
 				</div>
 			{/if}
 		{/foreach}
@@ -72,7 +71,7 @@
 		{assign var="doiUrl" value=$article->getStoredPubId('doi')|substr_replace:'https://doi.org/':0:0|escape}
 		{if $doiUrl}
 			<div class="article-summary-doi">
-				<a href="{$doiUrl}">{$doiUrl}</a>
+				<a href="{$doiUrl}" class="clickable" data-no-instant>{$doiUrl}</a>
 			</div>
 		{/if}
 	{/if}

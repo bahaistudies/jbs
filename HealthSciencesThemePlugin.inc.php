@@ -53,7 +53,7 @@ class HealthSciencesThemePlugin extends ThemePlugin {
 		if (Config::getVar('general', 'enable_cdn')) {
 			$this->addStyle(
 				'fonts',
-				'https://fonts.googleapis.com/css?family=Droid+Serif:200,200i,400,400i|Fira+Sans:300,300i,400,400i,700,700i',
+				'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lora:wght@500&display=swap',
 				array('baseUrl' => '')
 			);
 			$this->addStyle(
