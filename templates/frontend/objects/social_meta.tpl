@@ -47,7 +47,7 @@
 {/if}
 {if $article or $issue}
 {if $issue->getLocalizedCoverImageUrl()}
-    <meta property="og:image" content="https://abs.imgix.net/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
+    <meta property="og:image" content="{$cdnURL}public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
     <meta property="og:image:secure_url" content="https://abs.imgix.net/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
     <meta property="twitter:image" content="https://abs.imgix.net/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
 {elseif $issue->getIssueSeries()}
