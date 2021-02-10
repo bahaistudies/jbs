@@ -37,7 +37,7 @@
 			<div class="alert alert-primary" role="alert">
 				{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
 				{translate key="submission.outdatedVersion"
-					datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
+					datePublished=$publication->getData('datePublished')|date_format:$dateFormatLong
 					urlRecentVersion=$latestVersionUrl|escape
 				}
 			</div>
@@ -80,10 +80,10 @@
 					{translate key="submissions.published"}
 					{* If this is the original version *}
 					{if $firstPublication->getID() === $publication->getId()}
-						{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}
+						{$firstPublication->getData('datePublished')|date_format:$dateFormatLong}
 					{* If this is an updated version *}
 					{else}
-						{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}
+						{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatLong dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}
 					{/if}
 				</div>
 			{/if}
