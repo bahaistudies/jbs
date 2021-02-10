@@ -43,7 +43,5 @@
 {* CDN Configuration *}
 {* <meta property="ix:host" content="abs.imgix.net"/>
 <script src="/public/lib/imgix.js"></script> *}
-{* Assigning a global variable for image CDN base URL *}
-{assign var="cdn" value="//abs.imgix.net" scope="root"}
 </head>
      
