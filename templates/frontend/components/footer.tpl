@@ -52,7 +52,6 @@
 </div>
 
 {load_script context="frontend" scripts=$scripts}
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lora:wght@500&display=swap" rel="stylesheet">
 {call_hook name="Templates::Common::Footer::PageFooter"}
 </body>
 </html>
