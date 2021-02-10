@@ -36,7 +36,10 @@
 <meta name="msapplication-TileColor" content="#ffc40d"/>
 <meta name="msapplication-config" content="/public/icons/browserconfig.xml"/>
 <meta name="theme-color" content="#042c35"/>
-<link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
 {* CDN Configuration *}
 {* <meta property="ix:host" content="abs.imgix.net"/>
 <script src="/public/lib/imgix.js"></script> *}
