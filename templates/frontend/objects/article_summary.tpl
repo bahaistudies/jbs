@@ -62,7 +62,7 @@
 			{if $pubId}
 				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
 				<div class="article-summary-doi">
-					<a href="{$doiUrl}">{$doiUr}</a>
+					<a href="{$doiUrl}" class="clickable">{$doiUr}</a>
 				</div>
 			{/if}
 		{/foreach}
@@ -71,7 +71,7 @@
 		{assign var="doiUrl" value=$article->getStoredPubId('doi')|substr_replace:'https://doi.org/':0:0|escape}
 		{if $doiUrl}
 			<div class="article-summary-doi">
-				<a href="{$doiUrl}">{$doiUrl}</a>
+				<a href="{$doiUrl}" class="clickable">{$doiUrl}</a>
 			</div>
 		{/if}
 	{/if}
