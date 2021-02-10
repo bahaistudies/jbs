@@ -29,18 +29,18 @@
 {* Determine whether to show a logo of site title *}
 {capture assign="brand"}{strip}
 	{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
-		<img src="{$cdn}/public/{$displayPageHeaderLogo.uploadName|escape:"url"}?format=auto"
+		<img src="{$cdn}/public/journals/1/{$displayPageHeaderLogo.uploadName|escape:"url"}?auto=format"
 		     {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"
 		     {else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if}
 				 class="img-fluid">
 	{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}
 		<span class="navbar-logo-text">{$displayPageHeaderTitle|escape}</span>
 	{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_array($displayPageHeaderTitle)}
-		<img src="{$cdn}/public/{$displayPageHeaderTitle.uploadName|escape:"url"}?format=auto"
+		<img src="{$cdn}/public/journals/1/{$displayPageHeaderTitle.uploadName|escape:"url"}?auto=format"
 		     alt="{$displayPageHeaderTitle.altText|escape}"
 				 class="img-fluid">
 	{else}
-		<img src="{$cdn}/templates/images/structure/logo.png?format=auto" alt="{$applicationName|escape}" class="img-fluid">
+		<img src="{$cdn}/templates/images/structure/logo.png?auto=format" alt="{$applicationName|escape}" class="img-fluid">
 	{/if}
 {/strip}{/capture}
 
