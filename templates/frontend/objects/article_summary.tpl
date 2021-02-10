@@ -20,7 +20,7 @@
 	{assign var="showAuthor" value=true}
 {/if}
 
-<div class="article-summary" {if $journal}onclick="location.href=\'{url journal=$journal->getPath() page="article" op="view" path=$articlePath}\';" style="cursor: pointer;"{else}onclick="location.href=\'{url page="article" op="view" path=$articlePath}\';" style="cursor: pointer;"{/if}>
+<div class="article-summary" {if $journal}onclick="location.href='{url journal=$journal->getPath() page="article" op="view" path=$articlePath}';"{else}onclick="location.href='{url page="article" op="view" path=$articlePath}';"{/if}>
 
 	{if $showAuthor && $article->getPages()}
 		<div class="row">
