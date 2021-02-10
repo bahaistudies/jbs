@@ -41,7 +41,7 @@
 	{/if}
 
 	<div class="article-summary-title">
-		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="article-link">
+		<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}" {else}href="{url page="article" op="view" path=$articlePath}"{/if} class="article-link">
 			{$article->getLocalizedFullTitle()|escape}
 		</a>
 	</div>
