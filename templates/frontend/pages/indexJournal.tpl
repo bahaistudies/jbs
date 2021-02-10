@@ -20,7 +20,7 @@
 
 {if $homepageImage}
 	<div class="homepage-image{if $issue} homepage-image-behind-issue{/if}">
-		<img src="{$cdn}/public/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+		<img src="{$cdn}/public/{$homepageImage.uploadName|escape:"url"}?format=auto" alt="{$homepageImageAltText|escape}">
 	</div>
 {/if}
 
