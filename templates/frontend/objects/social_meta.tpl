@@ -8,8 +8,6 @@
  * @brief Prepares open graph and twitter social tags for the header for SEO and sharing.
  *
  *}
-{* Assigning a global variable for image CDN base URL *}
-{assign var="cdn" value="https://abs.imgix.net" scope="root"}
     {* Open Graph / Twitter Tags *}
 {if $article}
     <meta property="og:type" content="article"/>

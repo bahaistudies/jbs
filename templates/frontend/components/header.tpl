@@ -8,6 +8,8 @@
  * @brief Common frontend site header.
  *}
 
+{* Assigning a global variable for image CDN base URL *}
+{assign var="cdn" value="https://abs.imgix.net" scope="root"}
 {* Determine whether a logo or title string is being displayed *}
 {assign var="showingLogo" value=true}
 {if $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}

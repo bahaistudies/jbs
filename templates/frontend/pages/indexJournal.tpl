@@ -20,7 +20,7 @@
 
 {if $homepageImage}
 	<div class="homepage-image{if $issue} homepage-image-behind-issue{/if}">
-		<img src="{$cdn}/public/journals/1/{$homepageImage.uploadName|escape:"url"}?max-w=1900&auto=format" alt="{$homepageImageAltText|escape}">
+		<img src="{$cdn}/public/journals/1/{$homepageImage.uploadName|escape:"url"}?w=1900&auto=format" alt="{$homepageImageAltText|escape}">
 	</div>
 {/if}
 
