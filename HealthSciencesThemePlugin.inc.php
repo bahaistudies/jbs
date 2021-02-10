@@ -58,27 +58,27 @@ class HealthSciencesThemePlugin extends ThemePlugin {
 			);
 			$this->addStyle(
 				'bootstrap',
-				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css',
+				'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css',
 				array('baseUrl' => '')
 			);
-			$this->addStyle(
+			/* $this->addStyle(
 				'fontawesome',
 				'https://use.fontawesome.com/releases/v5.6.1/css/all.css',
 				array('baseUrl' => '')
-			);
+			); */
 			$this->addScript(
 				'jquery',
-				'https://code.jquery.com/jquery-3.5.1.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js',
 				array('baseUrl' => '')
 			);
 			$this->addScript(
 				'popper',
-				'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js',
 				array('baseUrl' => '')
 			);
 			$this->addScript(
 				'bootstrap',
-				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js',
 				array('baseUrl' => '')
 			);
 
