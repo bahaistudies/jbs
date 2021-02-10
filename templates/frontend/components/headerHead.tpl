@@ -42,6 +42,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com"/>
 {* CDN Configuration *}
 {* <meta property="ix:host" content="abs.imgix.net"/>
- <script src="/public/lib/imgix.js"></script> *}
+<script src="/public/lib/imgix.js"></script> *}
+{* Assigning a global variable for image CDN base URL *}
+{assign var="cdnURL" value="//abs.imgix.net/"}
 </head>
      
