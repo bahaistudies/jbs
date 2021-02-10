@@ -48,7 +48,7 @@
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
-<body dir="{$currentLocaleLangDir|escape|default:"ltr"}">
+<body dir="{$currentLocaleLangDir|escape|default:"ltr"}" data-instant-allow-query-string>
 
 {* Header *}
 <header class="main-header">
