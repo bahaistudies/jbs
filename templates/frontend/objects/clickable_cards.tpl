@@ -1,6 +1,6 @@
 <script>
 const card = document.querySelector(".article-summary");
-const mainLink = card.querySelector(".article-summary-title .article-link");
+const mainLink = card.querySelector(".article-link");
 const clickableElements = Array.from(card.querySelectorAll(".clickable"));
 
 clickableElements.forEach((ele) =>
