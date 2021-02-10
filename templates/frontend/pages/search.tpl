@@ -44,6 +44,31 @@
 
 				{* Results pagination *}
 				{else}
+<<<<<<< Updated upstream
+=======
+				
+				<script>
+				const card = document.querySelector(".article-summary");
+				const title = card.querySelector(".article-summary-title");
+				const mainLink = title.querySelector(".article-link");
+				const clickableElements = Array.from(card.querySelectorAll(".clickable"));
+
+				clickableElements.forEach((ele) =>
+				ele.addEventListener("click", (e) => e.stopPropagation())
+				);
+
+				function handleClick(event) {
+				const noTextSelected = !window.getSelection().toString();
+
+				if (noTextSelected) {
+					mainLink.click();
+				}
+				}
+
+				card.addEventListener("click", handleClick);
+				</script>
+
+>>>>>>> Stashed changes
 					{iterate from=results item=result}
 						{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
 					{/iterate}
