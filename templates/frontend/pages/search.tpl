@@ -44,7 +44,6 @@
 
 				{* Results pagination *}
 				{else}
-				{include file="frontend/objects/clickable_cards.tpl"}
 					{iterate from=results item=result}
 						{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
 					{/iterate}
@@ -102,5 +101,5 @@
 		</div>
 	</div>
 </div>
-
+{include file="frontend/objects/clickable_cards.tpl"}
 {include file="frontend/components/footer.tpl"}
