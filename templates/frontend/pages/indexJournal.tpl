@@ -133,5 +133,5 @@
 		</div>
 	{/if}
 </div><!-- .container -->
-
+{include file="frontend/objects/clickable_cards.tpl"}
 {include file="frontend/components/footer.tpl"}
