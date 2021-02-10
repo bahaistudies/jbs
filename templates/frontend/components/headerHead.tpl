@@ -38,7 +38,7 @@
 <meta name="application-name" content="Journal"/>
 <meta name="msapplication-TileColor" content="#ffc40d"/>
 <meta name="msapplication-config" content="/public/icons/browserconfig.xml"/>
-<meta name="theme-color" content="#7d0505"/>
+<meta name="theme-color" content="#042c35"/>
 <link rel="preconnect" href="https://fonts.gstatic.com"/>
 {* CDN Configuration *}
 {* <meta property="ix:host" content="abs.imgix.net"/>
