@@ -19,7 +19,5 @@ cards.forEach((card) =>	{
 
 	card.addEventListener("click", handleClick);
 })
-// testing
-
 
 </script>
