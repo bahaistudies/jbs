@@ -15,12 +15,12 @@
 <style>
 @font-face {
   font-family: 'fa';
-  src: url('../public/font/fa.eot?48052187');
-  src: url('../public/font/fa.eot?48052187#iefix') format('embedded-opentype'),
-       url('../public/font/fa.woff2?48052187') format('woff2'),
-       url('../public/font/fa.woff?48052187') format('woff'),
-       url('../public/font/fa.ttf?48052187') format('truetype'),
-       url('../public/font/fa.svg?48052187#fa') format('svg');
+  src: url('../../public/font/fa.eot?48052187');
+  src: url('../../public/font/fa.eot?48052187#iefix') format('embedded-opentype'),
+       url('../../public/font/fa.woff2?48052187') format('woff2'),
+       url('../../public/font/fa.woff?48052187') format('woff'),
+       url('../../public/font/fa.ttf?48052187') format('truetype'),
+       url('../../public/font/fa.svg?48052187#fa') format('svg');
   font-weight: normal;
   font-style: normal;
 }
