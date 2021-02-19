@@ -12,6 +12,57 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="about.submissions"}
 
+<style>
+@font-face {
+  font-family: 'fa';
+  src: url('../public/font/fa.eot?48052187');
+  src: url('../public/font/fa.eot?48052187#iefix') format('embedded-opentype'),
+       url('../public/font/fa.woff2?48052187') format('woff2'),
+       url('../public/font/fa.woff?48052187') format('woff'),
+       url('../public/font/fa.ttf?48052187') format('truetype'),
+       url('../public/font/fa.svg?48052187#fa') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="fa-"]:before, [class*=" fa-"]:before {
+  font-family: "fa";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.fa-ok-circled:before { content: '\e800'; } /* '' */
+.fa-check-circle:before { content: '\e801'; } /* '' */
+</style>
 <div class="container page-submissions">
 	<div class="row page-header justify-content-md-center">
 		<div class="col-md-8">
