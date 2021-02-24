@@ -29,7 +29,7 @@
 		</h1>
 	</div>
 	<div class="row justify-content-lg-center">
-		<div class="col-lg-4 search-col-filters">
+		<div class="search-col-filters">
 			<div class="search-filters">
 
 				{capture name="searchFormUrl"}{url op="search" escape=false}{/capture}
@@ -73,7 +73,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="col-lg-8 search-col-results">
+		<div class="search-col-results">
 			<div class="search-results">
 
 				{* No results found *}
