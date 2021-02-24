@@ -35,21 +35,21 @@
                 {capture name="searchFormUrl"}{url op="search" escape=false}{/capture}
                 {$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
                 <form class="form-search" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
-                    {if isset($searchFormUrl)}
-					{foreach from=$formUrlParameters key=paramKey item=paramValue}
+                    {foreach from=$formUrlParameters key=paramKey item=paramValue}
                         <input type="hidden" name="{$paramKey|escape}" value="{$paramValue|escape}" />
                     {/foreach}
-					{/if}
+                    <div class="form-group form-group-query">
+                        <label for="query">
+                            {translate key="common.searchQuery"}
+                        </label>
+                        <input type="text" class="form-control" id="query" name="query" value="{$query|escape}">
+                    </div>
+                    <div class="form-group form-group-buttons">
+                        <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
+                        <button class="btn" type="submit">{translate key="search.advancedFilters"}</button>
+                    </div>
                     <div class="advanced-queries">
-                        <div class="form-group form-group-query">
-                            <label for="query">
-                                {translate key="common.searchQuery"}
-                            </label>
-                            <input type="text" class="form-control" id="query" name="query" value="{$query|escape}">
-                        </div>
-                        <div class="form-group form-group-buttons">
-                            <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        </div>
+                        <h2>{translate key="search.advancedFilters"}</h2>
                         <div class="form-group form-group-authors">
                             <label for="authors">
                                 {translate key="search.author"}
