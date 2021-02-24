@@ -31,32 +31,8 @@
 		</h1>
 	</div>
 	<div class="row justify-content-lg-center">
-		<div class="col-lg-8 search-col-results">
-			<div class="search-results">
-
-				{* No results found *}
-				{if $results->wasEmpty()}
-					{if $error}
-						<div class="alert alert-danger" role="alert">{$error|escape}</div>
-					{else}
-						<div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
-					{/if}
-
-				{* Results pagination *}
-				{else}
-					{iterate from=results item=result}
-						{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
-					{/iterate}
-					<div class="pagination">
-						{page_info iterator=$results}
-						{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-					</div>
-				{/if}
-			</div>
-		</div>
 		<div class="col-lg-4 search-col-filters">
 			<div class="search-filters">
-				<h2>{translate key="plugins.themes.healthSciences.search.params"}</h2>
 
 				{capture name="searchFormUrl"}{url op="search" escape=false}{/capture}
 				{$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
@@ -97,6 +73,29 @@
 						<button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
 					</div>
 				</form>
+			</div>
+		</div>
+		<div class="col-lg-8 search-col-results">
+			<div class="search-results">
+
+				{* No results found *}
+				{if $results->wasEmpty()}
+					{if $error}
+						<div class="alert alert-danger" role="alert">{$error|escape}</div>
+					{else}
+						<div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
+					{/if}
+
+				{* Results pagination *}
+				{else}
+					{iterate from=results item=result}
+						{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
+					{/iterate}
+					<div class="pagination">
+						{page_info iterator=$results}
+						{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>
