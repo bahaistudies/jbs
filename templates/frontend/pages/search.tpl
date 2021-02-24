@@ -39,13 +39,13 @@
                         <input type="hidden" name="{$paramKey|escape}" value="{$paramValue|escape}" />
                     {/foreach}
                     <div class="advanced-queries">
-                        <div class="form-group form-group-query">
+                        <div class="form-group form-group-query main-query col-10">
                             <label for="query">
                                 {translate key="common.searchQuery"}
                             </label>
                             <input type="text" class="form-control" id="query" name="query" value="{$query|escape}">
                         </div>
-                        <div class="form-group form-group-buttons">
+                        <div class="form-group form-group-buttons main-query col-2">
                             <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
                         </div>
                         <div class="form-group form-group-authors">
