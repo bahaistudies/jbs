@@ -25,8 +25,6 @@
 				{translate key="plugins.themes.healthSciences.search.resultsFor" query=$query|escape}
 			{elseif $authors}
 				{translate key="plugins.themes.healthSciences.search.resultsFor" query=$authors|escape}
-			{else}
-				{translate key="common.search"}
 			{/if}
 		</h1>
 	</div>
