@@ -35,17 +35,19 @@
                 {capture name="searchFormUrl"}{url op="search" escape=false}{/capture}
                 {$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
                 <form class="form-search" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
-                    {foreach from=$formUrlParameters key=paramKey item=paramValue}
+                    {if isset($searchFormUrl)}
+					{foreach from=$formUrlParameters key=paramKey item=paramValue}
                         <input type="hidden" name="{$paramKey|escape}" value="{$paramValue|escape}" />
                     {/foreach}
+					{/if}
                     <div class="advanced-queries">
-                        <div class="form-group form-group-query main-query col-10">
+                        <div class="form-group form-group-query">
                             <label for="query">
                                 {translate key="common.searchQuery"}
                             </label>
                             <input type="text" class="form-control" id="query" name="query" value="{$query|escape}">
                         </div>
-                        <div class="form-group form-group-buttons main-query col-2">
+                        <div class="form-group form-group-buttons">
                             <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
                         </div>
                         <div class="form-group form-group-authors">
