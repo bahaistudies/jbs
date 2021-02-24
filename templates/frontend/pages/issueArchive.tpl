@@ -27,6 +27,7 @@
 
 	<div class="page-header page-archives-header">
 		<h1>{$pageTitle}</h1>
+		<a class="btn btn-primary mobile" href="/online/search/">Search Articles</a>
 	</div>
 
 	{* No issues have been published *}
