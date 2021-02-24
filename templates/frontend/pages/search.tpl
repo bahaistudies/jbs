@@ -64,7 +64,7 @@
 							{translate key="search.dateTo"}
 						</label>
 						<div class="form-control-date">
-							{html_select_date class="form-control" prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="1994" month_empty="March" day_empty="03" field_order="YMD"}
+							{html_select_date class="form-control" prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
 						</div>
 					</div>
 					<div class="form-group form-group-buttons">
