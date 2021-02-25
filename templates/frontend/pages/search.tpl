@@ -47,16 +47,12 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="button" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
-                        <script type="text/javascript">
-                            function toggle_visibility(id) {
-                                var e = document.getElementById(id);
-                                if (e.style.display == 'block')
-                                    e.style.display = 'none';
-                                else
-                                    e.style.display = 'block';
-                            }
-                        </script>
+                        <label class="toggle-control">
+						Advanced
+                            <input type="checkbox" checked="checked">
+                            <span class="control"></span>
+                        </label>
+
                     </div>
                     <div class="advanced-queries" id="advanced">
                         <h2>{translate key="search.advancedFilters"}</h2>
