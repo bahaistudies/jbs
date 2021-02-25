@@ -42,7 +42,7 @@
                         <label for="query">
                             {translate key="common.searchQuery"}
                         </label>
-                        <input type="text" class="form-control" id="query" name="query" value="{$query|escape}">
+                        <input type="text" class="form-control" id="query" name="query" value="{$query|escape}" autofocus>
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
