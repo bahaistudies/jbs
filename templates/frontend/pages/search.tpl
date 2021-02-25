@@ -47,14 +47,18 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="button" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
+                        <button class="btn" type="button" id="adv-toggle" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
                             function toggle_visibility(id) {
-                                var e = document.getElementById(id);
-                                if (e.style.display == 'grid')
-                                    e.style.display = 'none';
+                                var advanced = document.getElementById(id);
+								var button = document.getElementById(adv-toggle)
+                                if (advanced.style.display == 'grid')
+                                    advanced.style.display = 'none';
+									button.classlist.add('enabled');
+
                                 else
-                                    e.style.display = 'grid';
+                                    advanced.style.display = 'grid';
+									button.classlist.remove('enabled');
                             }
                         </script>
                     </div>
