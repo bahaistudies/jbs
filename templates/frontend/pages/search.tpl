@@ -42,20 +42,29 @@
                         <label for="query">
                             {translate key="common.searchQuery"}
                         </label>
-                        <input type="text" class="form-control" id="query" name="query" value="{$query|escape}" autofocus>
+                        <input type="text" class="form-control" id="query" name="query" value="{$query|escape}"
+                            autofocus>
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="submit">{translate key="search.advancedFilters"}</button>
+                        <button class="btn" type="button" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
+                        <script type="text/javascript">
+                            function toggle_visibility(id) {
+                                var e = document.getElementById(id);
+                                if (e.style.display == 'block')
+                                    e.style.display = 'none';
+                                else
+                                    e.style.display = 'block';
+                            }
+                        </script>
                     </div>
-                    <div class="advanced-queries">
+                    <div class="advanced-queries" id="advanced">
                         <h2>{translate key="search.advancedFilters"}</h2>
-						<div class="form-group form-group-title">
+                        <div class="form-group form-group-title">
                             <label for="title">
                                 {translate key="search.title"}
                             </label>
-                            <input type="text" class="form-control" id="title" name="title"
-                                value="{$title|escape}">
+                            <input type="text" class="form-control" id="title" name="title" value="{$title|escape}">
                         </div>
                         <div class="form-group form-group-authors">
                             <label for="authors">
