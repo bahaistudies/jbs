@@ -51,7 +51,7 @@
                         <script type="text/javascript">
                             function toggle_visibility(id) {
                                 var advanced = document.getElementById(id);
-								var button = document.getElementById(adv-toggle);
+								var button = document.getElementById('adv-toggle');
                                 if (advanced.style.display == 'grid')
                                     advanced.style.display = 'none';
 									button.classlist.add('enabled');
