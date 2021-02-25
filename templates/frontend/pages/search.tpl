@@ -50,6 +50,13 @@
                     </div>
                     <div class="advanced-queries">
                         <h2>{translate key="search.advancedFilters"}</h2>
+						<div class="form-group form-group-title">
+                            <label for="title">
+                                {translate key="search.author"}
+                            </label>
+                            <input type="text" class="form-control" id="title" name="title"
+                                value="{$title|escape}">
+                        </div>
                         <div class="form-group form-group-authors">
                             <label for="authors">
                                 {translate key="search.author"}
