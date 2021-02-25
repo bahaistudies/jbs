@@ -58,7 +58,7 @@
                             }
                         </script>
                     </div>
-                    <div class="advanced-queries" id="advanced">
+                    <div class="advanced-queries" id="advanced" style="display: none;">
                         <h2>{translate key="search.advancedFilters"}</h2>
                         <div class="form-group form-group-title">
                             <label for="title">
