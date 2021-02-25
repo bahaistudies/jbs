@@ -54,11 +54,9 @@
 								var button = document.getElementById('adv-toggle');
                                 if (advanced.style.display == 'grid')
                                     advanced.style.display = 'none';
-									button.classlist.add('enabled');
 
                                 else
                                     advanced.style.display = 'grid';
-									button.classlist.remove('enabled');
                             }
                         </script>
                     </div>
