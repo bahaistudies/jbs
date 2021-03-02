@@ -106,18 +106,19 @@
                     {else}
                         <div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
                     {/if}
+            </div>
 
                     {* Results pagination *}
                 {else}
                     {iterate from=results item=result}
                     {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
                     {/iterate}
-                    <div class="pagination">
-                        {page_info iterator=$results}
-                        {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-                    </div>
-                {/if}
             </div>
+            <div class="pagination">
+                    {page_info iterator=$results}
+                    {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+            </div>
+                {/if}
         </div>
     </div>
 </div>
