@@ -47,20 +47,20 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="button" id="adv-toggle" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
+                        <button class="btn" type="button" id="adv-toggle"
+                            onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
-                        function toggle_visibility(id) {
-                            var advanced = document.getElementById(id);
-                            var button = document.getElementById('adv-toggle');
-                            if (advanced.style.display == 'grid') {
-                                advanced.style.display = 'none';
-                                button.classList.remove("enabled");
+                            function toggle_visibility(id) {
+                                var advanced = document.getElementById(id);
+                                var button = document.getElementById('adv-toggle');
+                                if (advanced.style.display == 'grid') {
+                                    advanced.style.display = 'none';
+                                    button.classList.remove("enabled");
+                                } else {
+                                    advanced.style.display = 'grid';
+                                    button.classList.add("enabled");
+                                }
                             }
-                            else {
-                                advanced.style.display = 'grid';
-                                button.classList.add("enabled");
-                            }
-                        }
                         </script>
                     </div>
                     <div class="advanced-queries" id="advanced" style="display: none;">
@@ -100,7 +100,7 @@
         </div>
         <div class="search-col-results">
             <div class="search-results">
-
+Testing Github.
                 {* No results found *}
                 {if $results->wasEmpty()}
                     {if $error}
@@ -109,21 +109,21 @@
                     {else}
                         <div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
                     {/if}
-            </div>
+                </div>
 
-                    {* Results pagination *}
-                {else}
-                    {iterate from=results item=result}
-                    {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
-                    {/iterate}
+                {* Results pagination *}
+            {else}
+                {iterate from=results item=result}
+                {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
+                {/iterate}
             </div>
             <div class="pagination">
-                    {page_info iterator=$results}
-                    {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+                {page_info iterator=$results}
+                {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
             </div>
-                {/if}
-        </div>
+        {/if}
     </div>
+</div>
 </div>
 {include file="frontend/objects/clickable_cards.tpl"}
 {include file="frontend/components/footer.tpl"}
