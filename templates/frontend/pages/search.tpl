@@ -100,7 +100,6 @@
         </div>
         <div class="search-col-results">
             <div class="search-results">
-Testing Github.
                 {* No results found *}
                 {if $results->wasEmpty()}
                     {if $error}
