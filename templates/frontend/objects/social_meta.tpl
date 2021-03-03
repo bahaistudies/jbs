@@ -48,14 +48,14 @@
 {/if}
 {if $article or $issue}
 {if $issue->getLocalizedCoverImageUrl()}
-    <meta property="og:image" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
-    <meta property="og:image:secure_url" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
-    <meta property="twitter:image" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
+    <meta property="og:image" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
+    <meta property="og:image:secure_url" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
+    <meta property="twitter:image" content="{$cdn}/public/images/desk.jpg?mark={$issue->getLocalizedCoverImageUrl()|escape}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
 {elseif $issue->getIssueSeries()}
 {assign var=basicCover value="{$cdn}/public/images/blank-cover.png?w=400&h=600&mark64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvamJzLXdoaXRlLnBuZw&mark-align=middle%2Ccenter&mark-w=0.80&mark-y=106&txt={if $issue->getIssueSeries()}{$issue->getIssueSeries()}{/if}&txt-font=PTSerif-Regular&txt-color=fff&txt-align=middle%2Ccenter&txt-size=22&txt-clip=ellipsis&auto=format&exp=-10&hue=132&bg=00395B&blend64=aHR0cHM6Ly9hYnMuaW1naXgubmV0L3B1YmxpYy9pbWFnZXMvZmxvdXJpc2gucG5nP2ludmVydD10cnVlJnJvdD0xODA&blend-align=bottom%2Ccenter&blend-w=0.30&blend-mode=normal&blend-y=203"}
-    <meta property="og:image" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
-    <meta property="og:image:secure_url" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
-    <meta property="twitter:image" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900&w=900&fit=crop"/>
+    <meta property="og:image" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
+    <meta property="og:image:secure_url" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
+    <meta property="twitter:image" content="{$cdn}/public/images/desk.jpg?mark64={base64_encode($basicCover)}&mark-w=360&mark-x=315&mark-y=323&mark-rot=23&crop=left&h=900"/>
 {else}
     <meta property="og:image" content="{$cdn}/public/images/jbs-mockup.png?txt={$issue->getIssueSeries()|escape}&txt-align=middle%2C%20center&txt-font=PTSerif-Bold&txt-size=50&txt-color=white&txt-pad=100&w=900&h=900&fit=clip&txt-shad=42&txt-clip=ellipsis"/>
     <meta property="og:image:secure_url" content="{$cdn}/public/images/jbs-mockup.png?txt={$issue->getIssueSeries()|escape}&txt-align=middle%2C%20center&txt-font=PTSerif-Bold&txt-size=50&txt-color=white&txt-pad=100&w=900&h=900&fit=clip&txt-shad=42&txt-clip=ellipsis"/>
