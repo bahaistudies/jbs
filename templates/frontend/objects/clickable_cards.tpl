@@ -1,23 +1,22 @@
 <script>
-const cards = document.querySelectorAll(".article-summary");
+    const cards = document.querySelectorAll(".article-summary");
 
-cards.forEach((card) =>	{
-	const mainLink = card.querySelector(".article-link");
-	const clickableElements = Array.from(card.querySelectorAll(".clickable"));
+    cards.forEach((card) => {
+        const mainLink = card.querySelector(".article-link");
+        const clickableElements = Array.from(card.querySelectorAll(".clickable"));
 
-	clickableElements.forEach((ele) =>
-			ele.addEventListener("click", (e) => e.stopPropagation())
-	);
+        clickableElements.forEach((ele) =>
+            ele.addEventListener("click", (e) => e.stopPropagation())
+        );
 
-	function handleClick(event) {
-			const noTextSelected = !window.getSelection().toString();
+        function handleClick(event) {
+            const noTextSelected = !window.getSelection().toString();
 
-			if (noTextSelected) {
-					mainLink.click();
-			}
-	}
+            if (noTextSelected) {
+                mainLink.click();
+            }
+        }
 
-	card.addEventListener("click", handleClick);
-})
-
+        card.addEventListener("click", handleClick);
+    })
 </script>
