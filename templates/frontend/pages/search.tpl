@@ -49,15 +49,18 @@
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
                         <button class="btn" type="button" id="adv-toggle" onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
-                            function toggle_visibility(id) {
-                                var advanced = document.getElementById(id);
-								var button = document.getElementById('adv-toggle');
-                                if (advanced.style.display == 'grid')
-                                    advanced.style.display = 'none';
-
-                                else
-                                    advanced.style.display = 'grid';
+                        function toggle_visibility(id) {
+                            var advanced = document.getElementById(id);
+                            var button = document.getElementById('adv-toggle');
+                            if (advanced.style.display == 'grid') {
+                                advanced.style.display = 'none';
+                                button.classList.remove("enabled");
                             }
+                            else {
+                                advanced.style.display = 'grid';
+                                button.classList.add("enabled");
+                            }
+                        }
                         </script>
                     </div>
                     <div class="advanced-queries" id="advanced" style="display: none;">
