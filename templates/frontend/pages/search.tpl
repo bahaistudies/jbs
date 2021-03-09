@@ -83,7 +83,7 @@
                                 {translate key="search.dateFrom"}
                             </label>
                             <div class="form-control-date">
-                                {html_select_date class="form-control" prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
+                                {html_select_date class="form-control" prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="Year" month_empty="" day_empty="" field_order="YMD"}
                             </div>
                         </div>
                         <div class="form-group form-group-date-to">
