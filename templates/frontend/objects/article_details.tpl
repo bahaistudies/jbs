@@ -44,7 +44,7 @@
 			{/if}
 
 			{* Title and issue details *}
-			<div class="article-details-issue-section small-screen">
+			<div class="article-details-issue-section small-screen" aria-hidden="true">
 				<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">{$issue->getIssueSeries()|escape}</a>{if $section}, <span>{$section->getLocalizedTitle()|escape}</span>{/if}
 			</div>
 
@@ -367,15 +367,18 @@
 				{/foreach}
 
 				{* Article Galleys (bottom) *}
+				<div class="article-details-block article-details-galleys article-details-galleys-btm">
 				{if $primaryGalleys}
-					<div class="article-details-block article-details-galleys article-details-galleys-btm">
 						{foreach from=$primaryGalleys item=galley}
 							<div class="article-details-galley">
 								{include file="frontend/objects/galley_link.tpl" parent=$article galley=$galley purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
 							</div>
 						{/foreach}
-					</div>
+				{else}
+				<p>This article is not available at the present time. Please direct any inquiries to <a href="mailto:editor@bahaistudies.ca?subject=Article%20Downloads%20-%20Inquiry%20about%20{if $publication}{$publication->getLocalizedFullTitle()|escape}{else}an%20article{/if}&body=%0D%0A%0D%0A%E2%AC%86%20Enter%20your%20message%20above.%20%E2%AC%86%0D%0A----------------------------%0D%0AArticle%20Details%0D%0ATitle%3A%20{if $publication}{$publication->getLocalizedFullTitle()|escape}{else}blank{/if}{if $doiUrl}%0D%0ALink%3A%20{$doiUrl}{/if}" target="_blank"></a></p>
 				{/if}
+				</div>
+
 
 				{* References *}
 				{if $parsedCitations || $publication->getData('citationsRaw')}
