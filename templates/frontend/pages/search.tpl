@@ -104,6 +104,8 @@
             {if $results->wasEmpty()}
                 {if $error}
                     <div class="alert alert-danger" role="alert">{$error|escape}</div>
+                {elseif $searchFormUrl->wasEmpty()}
+                    <div class="alert alert-primary" role="alert">Enter a search term.</div>
                 {else}
                     <div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
                 {/if}
