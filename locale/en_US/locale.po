@@ -64,3 +64,6 @@ msgstr "Search Results for <em>{$query}</em>"
 
 msgid "plugins.themes.healthSciences.search.params"
 msgstr "Search Parameters"
+
+msgid "plugins.themes.healthSciences.search.blank"
+msgstr "Enter a search query"
