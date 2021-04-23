@@ -117,5 +117,17 @@ a.tagit-close {
 
 fieldset, legend {
     all: revert;
+}
+
+fieldset {
     margin-bottom: 1em;
+}
+
+.form-control {
+    all: revert;
+    padding: 0.2em;
+}
+
+label.required::after {
+    content: " *";
 }
