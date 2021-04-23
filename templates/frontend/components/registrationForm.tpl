@@ -25,19 +25,19 @@
 				<label for="givenName" class="required">
 					{translate key="user.givenName"}
 				</label>
-				<input class="form-control" type="text" name="givenName" id="givenName" value="{$givenName|escape}" maxlength="255" required aria-required="true" >
+				<input class="form-control" type="text" name="givenName" id="givenName" value="{$givenName|escape}" maxlength="255" required aria-required="true" autofocus autocomplete="given-name">
 				<label for="familyName">
 					{translate key="user.familyName"}
 				</label>
-				<input class="form-control" type="text" name="familyName" value="{$familyName|escape}" maxlength="255">
+				<input class="form-control" type="text" name="familyName" value="{$familyName|escape}" maxlength="255" autocomplete="family-name">
 				<label for="affiliation">
 					{translate key="user.affiliation"}
 				</label>
-				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" >
+				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" autocomplete="organization">
 				<label for="country" class="required">
 					{translate key="common.country"}
 				</label>
-				<select class="form-control" name="country" id="country" required aria-required="true">
+				<select class="form-control" name="country" id="country" required aria-required="true" autocomplete="country-name">
 					<option></option>
 					{html_options options=$countries selected=$country}
 				</select>
@@ -51,19 +51,19 @@
 				<label for="email" class="required">
 					{translate key="user.email"}
 				</label>
-				<input class="form-control" type="text" name="email" id="email" value="{$email|escape}" maxlength="90" required aria-required="true">
+				<input class="form-control" type="email" name="email" id="email" value="{$email|escape}" maxlength="90" required aria-required="true" autocomplete="email">
 				<label for="username" class="required">
 					{translate key="user.username"}
 				</label>
-				<input class="form-control" type="text" name="username" id="username" value="{$username|escape}" maxlength="32" required aria-required="true">
+				<input class="form-control" type="text" name="username" id="username" value="{$username|escape}" maxlength="32" required aria-required="true" autocomplete="username">
 				<label for="password" class="required">
 					{translate key="user.password"}
 				</label>
-				<input class="form-control" type="password" name="password" id="password" password="true" maxlength="32" required aria-required="true">
+				<input class="form-control" type="password" name="password" id="password" password="true" maxlength="32" required aria-required="true" autocomplete="new-password">
 				<label for="password2" class="required">
 					{translate key="user.repeatPassword"}
 				</label>
-				<input class="form-control" type="password" name="password2" id="password2" password="true" maxlength="32" required>
+				<input class="form-control" type="password" name="password2" id="password2" password="true" maxlength="32" required autocomplete="new-password">
 		</fieldset>
 	</div>
 	<div class="col-lg-12">
