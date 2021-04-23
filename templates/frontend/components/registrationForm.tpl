@@ -22,45 +22,25 @@
 			<legend>
 				{translate key="user.profile"}
 			</legend>
-			<div class="form-group">
-				<label for="givenName">
+				<label for="givenName" class="required">
 					{translate key="user.givenName"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="text" name="givenName" id="givenName" value="{$givenName|escape}" maxlength="255" required>
-			</div>
-			<div class="form-group">
+				<input class="form-control" type="text" name="givenName" id="givenName" value="{$givenName|escape}" maxlength="255" required aria-required="true" autofocus autocomplete="given-name">
 				<label for="familyName">
 					{translate key="user.familyName"}
 				</label>
-				<input class="form-control" type="text" name="familyName" value="{$familyName|escape}" maxlength="255">
-			</div>
-			<div class="form-group">
+				<input class="form-control" type="text" name="familyName" value="{$familyName|escape}" maxlength="255" autocomplete="family-name">
 				<label for="affiliation">
 					{translate key="user.affiliation"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" required>
-			</div>
-			<div class="form-group">
-				<label for="country">
+				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" autocomplete="organization">
+				<label for="country" class="required">
 					{translate key="common.country"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<select class="form-control" name="country" id="country" required>
+				<select class="form-control" name="country" id="country" required aria-required="true" autocomplete="country-name">
 					<option></option>
 					{html_options options=$countries selected=$country}
 				</select>
-			</div>
 		</fieldset>
 	</div>
 	<div class="col-lg-6">
@@ -68,46 +48,22 @@
 			<legend>
 				{translate key="user.login"}
 			</legend>
-			<div class="form-group">
-				<label for="email">
+				<label for="email" class="required">
 					{translate key="user.email"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="text" name="email" id="email" value="{$email|escape}" maxlength="90" required>
-			</div>
-			<div class="form-group">
-				<label for="username">
+				<input class="form-control" type="email" name="email" id="email" value="{$email|escape}" maxlength="90" required aria-required="true" autocomplete="email">
+				<label for="username" class="required">
 					{translate key="user.username"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="text" name="username" id="username" value="{$username|escape}" maxlength="32" required>
-			</div>
-			<div class="form-group">
-				<label for="password">
+				<input class="form-control" type="text" name="username" id="username" value="{$username|escape}" maxlength="32" required aria-required="true" autocomplete="username">
+				<label for="password" class="required">
 					{translate key="user.password"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="password" name="password" id="password" password="true" maxlength="32" required>
-			</div>
-			<div class="form-group">
-				<label for="password2">
+				<input class="form-control" type="password" name="password" id="password" password="true" maxlength="32" required aria-required="true" autocomplete="new-password">
+				<label for="password2" class="required">
 					{translate key="user.repeatPassword"}
-					<span class="required" aria-hidden="true">*</span>
-					<span class="sr-only">
-						{translate key="common.required"}
-					</span>
 				</label>
-				<input class="form-control" type="password" name="password2" id="password2" password="true" maxlength="32" required>
-			</div>
+				<input class="form-control" type="password" name="password2" id="password2" password="true" maxlength="32" required autocomplete="new-password">
 		</fieldset>
 	</div>
 	<div class="col-lg-12">

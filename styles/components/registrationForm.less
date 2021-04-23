@@ -71,11 +71,7 @@
 	display: none;
 }
 
-#reviewerInterests {
-	margin-top: -23px;
-	margin-bottom: 48px;
-	font-size: 1.1rem;
-	
+#reviewerInterests {	
 	& .label {
 		margin-bottom: 12px;
 	}
@@ -113,4 +109,22 @@ li.tagit-new {
 
 a.tagit-close {
 	cursor: pointer;
+}
+
+fieldset, legend {
+    all: revert;
+}
+
+fieldset {
+    margin-bottom: 1em;
+    border-color: darkgrey;
+}
+
+.form-control {
+    all: revert;
+    padding: 0.2em;
+}
+
+label.required::after {
+    content: " *";
 }
