@@ -122,8 +122,9 @@ fieldset {
 
 .form-control {
     all: revert;
-    padding: 0.5em;
-    width: 100%;
+	--input-padding:0.5em;
+    padding: var(--input-padding);
+    width: calc(100% - var(--input-padding) * 2);
     border-color: lightgrey;
     border: 1px solid #ced4da;
     border-radius: 0.3em;
