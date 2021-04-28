@@ -95,12 +95,12 @@
 							<li>
 								{if $authorString->getLocalizedAffiliation() or $authorString->getLocalizedBiography()}
 								<a class="author-string-href" href="#author-{$authorStringKey+1}" data-toggle="modal"
-                                data-target="#authorBiographyModal{$authorKey+1}" title="Open Biography">
+                                data-target="#authorBiographyModal{$authorKey+1}" title="Open Biography" aria-label="{$authorString->getFullName()|escape}, click to open biography.">
 									<span>{$authorString->getFullName()|escape}</span>
 									<sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
 								</a>
 								{else}
-								<span>{$authorString->getFullName()|escape}</span>
+								<span aria-label="{$authorString->getFullName()|escape}, no biography available.">{$authorString->getFullName()|escape}</span>
 								{/if}
 								{if $authorString->getOrcid()}
 									<a class="orcidImage" href="{$authorString->getOrcid()|escape}"><img src="{$baseUrl}/{$orcidImage}"></a>
