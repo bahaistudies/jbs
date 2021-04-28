@@ -72,7 +72,7 @@
                 {if $pubId}
                     {assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
                     <div class="article-details-doi large-screen">
-                        <a href="{$doiUrl}">{$doiUrl}</a>
+                        <a href="{$doiUrl}" aria-label="Document Object Identifier (D O I)">{$doiUrl}</a>
                     </div>
                 {/if}
             {/foreach}
