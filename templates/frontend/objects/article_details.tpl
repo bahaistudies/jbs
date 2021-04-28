@@ -101,7 +101,7 @@
                                         data-target="#authorBiographyModal{$authorStringKey+1}"
                                         aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
                                         <span>{$authorString->getFullName()|escape}</span>
-                                        <sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
+                                        <sup class="author-plus" aria-hidden="true">&plus;</sup>
                                     </button>
                                 {else}
                                     {* Translations should be added here later where possible. *}
@@ -129,7 +129,6 @@
                                         data-target="#authorBiographyModal{$authorStringKey+1}"
                                         aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
                                         <span>{$authorString->getFullName()|escape}</span>
-                                        <sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
                                     </button>
                                 {else}
                                     {* Translations should be added here later where possible. *}
