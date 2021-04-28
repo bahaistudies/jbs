@@ -94,12 +94,13 @@
 						{strip}
 							<li>
 								{if $authorString->getLocalizedAffiliation() or $authorString->getLocalizedBiography()}
-								<a class="author-string-href" href="#author-{$authorStringKey+1}" data-toggle="modal"
-                                data-target="#authorBiographyModal{$authorKey+1}" title="Open Biography" aria-label="{$authorString->getFullName()|escape}, click to open biography.">
+								<button class="author-string-href" data-toggle="modal"
+                                data-target="#authorBiographyModal{$authorKey+1}" aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
 									<span>{$authorString->getFullName()|escape}</span>
 									<sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
-								</a>
+								</button>
 								{else}
+                                    {* Translations should be added here later where possible. *}
 								<span aria-label="{$authorString->getFullName()|escape}, no biography available.">{$authorString->getFullName()|escape}</span>
 								{/if}
 								{if $authorString->getOrcid()}
@@ -131,9 +132,6 @@
 								</div>
 							{/if}
 							{if $author->getLocalizedBiography()}
-								<button type="button" class="article-details-bio-toggle" data-toggle="modal" data-target="#authorBiographyModal{$authorKey+1}">
-									{translate key="plugins.themes.healthSciences.article.authorBio"}
-								</button>
 								{* Store author biographies to print as modals in the footer *}
 								{capture append="authorBiographyModalsTemp"}
 									<div
