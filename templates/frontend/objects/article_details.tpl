@@ -123,17 +123,14 @@
                 <div class="article-details-authors">
                     {foreach from=$publication->getData('authors') item=author key=authorKey}
                         <div class="article-details-author hideAuthor" id="author-{$authorKey+1}">
-                            <div class="article-details-author-name small-screen">
-                                {$author->getFullName()|escape}
-                            </div>
-                            {if $author->getOrcid()}
+                            {* {if $author->getOrcid()}
                                 <div class="article-details-author-orcid">
                                     <a href="{$author->getOrcid()|escape}" target="_blank">
                                         {$orcidIcon}
                                         {$author->getOrcid()|escape}
                                     </a>
                                 </div>
-                            {/if}
+                            {/if} *}
                             {if $author->getLocalizedBiography()}
                                 {* Store author biographies to print as modals in the footer *}
                                 {capture append="authorBiographyModalsTemp"}
