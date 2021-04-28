@@ -96,7 +96,7 @@
                     {foreach from=$publication->getData('authors') item=authorString key=authorStringKey}
                         {strip}
                             <li>
-                                {if $authorString->getLocalizedAffiliation() or $authorString->getLocalizedBiography()}
+                                {if $authorString->getLocalizedBiography()}
                                     <button class="author-string-href" data-toggle="modal"
                                         data-target="#authorBiographyModal{$authorKey+1}"
                                         aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
@@ -123,11 +123,11 @@
                 <div class="article-details-authors">
                     {foreach from=$publication->getData('authors') item=author key=authorKey}
                         <div class="article-details-author hideAuthor" id="author-{$authorKey+1}">
-                            <div class="article-details-author-name small-screen">
+                            <div class="article-details-author-name small-screen" aria-hidden="true">
                                 {$author->getFullName()|escape}
                             </div>
                             {if $author->getOrcid()}
-                                <div class="article-details-author-orcid">
+                                <div class="article-details-author-orcid" aria-hidden="true">
                                     <a href="{$author->getOrcid()|escape}" target="_blank">
                                         {$orcidIcon}
                                         {$author->getOrcid()|escape}
