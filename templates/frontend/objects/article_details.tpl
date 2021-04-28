@@ -92,7 +92,7 @@
             {/if}
 
             {if $publication->getData('authors')}
-                <ul class="authors-string">
+                <ul class="authors-string" aria-label="Authors">
                     {foreach from=$publication->getData('authors') item=authorString key=authorStringKey}
                         {strip}
                             <li>
