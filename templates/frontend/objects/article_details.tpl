@@ -98,7 +98,7 @@
                             <li>
                                 {if $authorString->getLocalizedBiography()}
                                     <button class="author-string-href" data-toggle="modal"
-                                        data-target="#authorBiographyModal{$authorKey+1}"
+                                        data-target="#authorBiographyModal{$authorStringKey+1}"
                                         aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
                                         <span>{$authorString->getFullName()|escape}</span>
                                         <sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
@@ -121,34 +121,44 @@
                 {assign var="authorCount" value=$publication->getData('authors')|@count}
                 {assign var="authorBioIndex" value=0}
                 <div class="article-details-authors">
-                    {foreach from=$publication->getData('authors') item=author key=authorKey}
-                        <div class="article-details-author hideAuthor" id="author-{$authorKey+1}">
+                    {foreach from=$publication->getData('authors') item=authorString key=authorStringKey}
+                        <div class="article-details-author hideAuthor" id="author-{$authorStringKey+1}">
                             <div class="article-details-author-name small-screen" aria-hidden="true">
-                                {$author->getFullName()|escape}
+                                {if $authorString->getLocalizedBiography()}
+                                    <button class="author-string-href" data-toggle="modal"
+                                        data-target="#authorBiographyModal{$authorStringKey+1}"
+                                        aria-label="{$authorString->getFullName()|escape}, {translate key="plugins.themes.healthSciences.article.authorBio"}.">
+                                        <span>{$authorString->getFullName()|escape}</span>
+                                        <sup class="author-symbol author-plus" aria-hidden="true">&plus;</sup>
+                                    </button>
+                                {else}
+                                    {* Translations should be added here later where possible. *}
+                                    <span aria-label="{$authorString->getFullName()|escape}, no biography available.">{$authorString->getFullName()|escape}</span>
+                                {/if}
                             </div>
-                            {if $author->getOrcid()}
+                            {if $authorString->getOrcid()}
                                 <div class="article-details-author-orcid" aria-hidden="true">
-                                    <a href="{$author->getOrcid()|escape}" target="_blank">
+                                    <a href="{$authorString->getOrcid()|escape}" target="_blank">
                                         {$orcidIcon}
-                                        {$author->getOrcid()|escape}
+                                        {$authorString->getOrcid()|escape}
                                     </a>
                                 </div>
                             {/if}
-                            {if $author->getLocalizedBiography()}
+                            {if $authorString->getLocalizedBiography()}
                                 {* Store author biographies to print as modals in the footer *}
                                 {capture append="authorBiographyModalsTemp"}
-                                    <div class="modal fade" id="authorBiographyModal{$authorKey+1}" tabindex="-1" role="dialog"
-                                        aria-labelledby="authorBiographyModalTitle{$authorKey+1}" aria-hidden="true">
+                                    <div class="modal fade" id="authorBiographyModal{$authorStringKey+1}" tabindex="-1" role="dialog"
+                                        aria-labelledby="authorBiographyModalTitle{$authorStringKey+1}" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <div class="modal-title" id="authorBiographyModalTitle{$authorKey+1}">
-                                                        {$author->getFullName()|escape}
+                                                    <div class="modal-title" id="authorBiographyModalTitle{$authorStringKey+1}">
+                                                        {$authorString->getFullName()|escape}
                                                     </div>
-                                                    {if $author->getLocalizedAffiliation()}
+                                                    {if $authorString->getLocalizedAffiliation()}
                                                         <div class="article-details-author-affiliation">
                                                             <span aria-label="from"></span>
-                                                            {$author->getLocalizedAffiliation()|escape}
+                                                            {$authorString->getLocalizedAffiliation()|escape}
                                                         </div>
                                                     {/if}
                                                     <button type="button" class="close" data-dismiss="modal"
@@ -157,7 +167,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    {$author->getLocalizedBiography()|strip_unsafe_html}
+                                                    {$authorString->getLocalizedBiography()|strip_unsafe_html}
                                                 </div>
                                             </div>
                                         </div>
