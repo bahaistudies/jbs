@@ -37,9 +37,9 @@
                 <div class="alert alert-primary" role="alert">
                     {capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
                     {translate key="submission.outdatedVersion"
-    					datePublished=$publication->getData('datePublished')|date_format:$dateFormatLong
-    					urlRecentVersion=$latestVersionUrl|escape
-    				}
+        					datePublished=$publication->getData('datePublished')|date_format:$dateFormatLong
+        					urlRecentVersion=$latestVersionUrl|escape
+        				}
                 </div>
             {/if}
 
@@ -132,7 +132,8 @@
                                     </button>
                                 {else}
                                     {* Translations should be added here later where possible. *}
-                                    <span aria-label="{$authorString->getFullName()|escape}, no biography available.">{$authorString->getFullName()|escape}</span>
+                                    <span
+                                        aria-label="{$authorString->getFullName()|escape}, no biography available.">{$authorString->getFullName()|escape}</span>
                                 {/if}
                             </div>
                             {if $authorString->getOrcid()}
@@ -151,6 +152,10 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="{translate|escape key="common.close"}">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
                                                     <div class="modal-title" id="authorBiographyModalTitle{$authorStringKey+1}">
                                                         {$authorString->getFullName()|escape}
                                                     </div>
@@ -160,10 +165,6 @@
                                                             {$authorString->getLocalizedAffiliation()|escape}
                                                         </div>
                                                     {/if}
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="{translate|escape key="common.close"}">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
                                                 </div>
                                                 <div class="modal-body">
                                                     {$authorString->getLocalizedBiography()|strip_unsafe_html}
