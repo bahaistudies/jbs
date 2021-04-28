@@ -258,7 +258,7 @@
 
                 {* Supplementary galleys *}
                 {if $supplementaryGalleys}
-                    <div class="article-details-block article-details-galleys-supplementary">
+                    <div class="article-details-block article-details-galleys-supplementary" role="list" aria-label="Article">
                         <h2 class="article-details-heading">
                             {translate key="plugins.themes.healthSciences.article.supplementaryFiles"}</h2>
                         {foreach from=$supplementaryGalleys item=galley}
@@ -379,19 +379,24 @@
                 {/foreach}
 
                 {* Article Galleys (bottom) *}
-                <div class="article-details-block article-details-galleys article-details-galleys-btm">
                     {if $primaryGalleys}
+                        <ul class="article-details-block article-details-galleys article-details-galleys-btm">
+
                         {foreach from=$primaryGalleys item=galley}
-                            <div class="article-details-galley">
+                            <li class="article-details-galley">
                                 {include file="frontend/objects/galley_link.tpl" parent=$article galley=$galley purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
-                            </div>
+                            </li>
                         {/foreach}
+                        
+                </ul>
                     {else}
+                        <div class="article-details-block article-details-galleys article-details-galleys-btm">
+
                         <p>This article is not available to download at the present time. Please direct any inquiries to <a
                                 href="mailto:editor@bahaistudies.ca?subject=Article%20Downloads%20-%20Inquiry%20about%20{if $publication}{$publication->getLocalizedFullTitle()|escape}{else}an%20article{/if}&body=%0D%0A%0D%0A%E2%AC%86%20Enter%20your%20message%20above.%20%E2%AC%86%0D%0A----------------------------%0D%0AArticle%20Details%0D%0ATitle%3A%20{if $publication}{$publication->getLocalizedFullTitle()|escape}{else}blank{/if}{if $doiUrl}%0D%0ALink%3A%20{$doiUrl}{/if}"
                                 target="_blank">editor@bahaistudies.ca</a></p>
+                        </div>
                     {/if}
-                </div>
 
 
                 {* References *}
