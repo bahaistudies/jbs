@@ -147,6 +147,7 @@
                                                     </div>
                                                     {if $author->getLocalizedAffiliation()}
                                                         <div class="article-details-author-affiliation">
+                                                            <span aria-label="from"></span>
                                                             {$author->getLocalizedAffiliation()|escape}
                                                         </div>
                                                     {/if}
