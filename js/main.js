@@ -16,36 +16,36 @@
 	})
 })(jQuery);
 
-(function ($) {
+// (function ($) {
 
-	// Show author affiliation under authors list (for large screen only)
-	var authorString = $('.author-string-href');
-	$(authorString).click(function(event) {
-		event.preventDefault();
-		var elementId = $(this).attr('href').replace('#', '');
-		$('.article-details-author').each(function () {
+// 	// Show author affiliation under authors list (for large screen only)
+// 	var authorString = $('.author-string-href');
+// 	$(authorString).click(function(event) {
+// 		event.preventDefault();
+// 		var elementId = $(this).attr('href').replace('#', '');
+// 		$('.article-details-author').each(function () {
 
-			// Show only targeted author's affiliation on click
-			if ($(this).attr('id') === elementId && $(this).hasClass('hideAuthor')) {
-				$(this).removeClass('hideAuthor');
-			} else {
-				$(this).addClass('hideAuthor');
-			}
-		});
-		// Add specifiers to the clicked author's link
-		$(authorString).each(function () {
-			if ($(this).attr('href') === ('#' + elementId) && !$(this).hasClass('active')){
-				$(this).addClass('active');
-				$(this).children('.author-plus').addClass('hide');
-				$(this).children('.author-minus').removeClass('hide');
-			} else if ($(this).attr('href') !== ('#' + elementId) || $(this).hasClass('active')) {
-				$(this).removeClass('active');
-				$(this).children('.author-plus').removeClass('hide');
-				$(this).children('.author-minus').addClass('hide');
-			}
-		});
-	})
-})(jQuery);
+// 			// Show only targeted author's affiliation on click
+// 			if ($(this).attr('id') === elementId && $(this).hasClass('hideAuthor')) {
+// 				$(this).removeClass('hideAuthor');
+// 			} else {
+// 				$(this).addClass('hideAuthor');
+// 			}
+// 		});
+// 		// Add specifiers to the clicked author's link
+// 		$(authorString).each(function () {
+// 			if ($(this).attr('href') === ('#' + elementId) && !$(this).hasClass('active')){
+// 				$(this).addClass('active');
+// 				$(this).children('.author-plus').addClass('hide');
+// 				$(this).children('.author-minus').removeClass('hide');
+// 			} else if ($(this).attr('href') !== ('#' + elementId) || $(this).hasClass('active')) {
+// 				$(this).removeClass('active');
+// 				$(this).children('.author-plus').removeClass('hide');
+// 				$(this).children('.author-minus').addClass('hide');
+// 			}
+// 		});
+// 	})
+// })(jQuery);
 
 
 // initiating tag-it
