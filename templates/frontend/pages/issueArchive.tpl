@@ -30,18 +30,20 @@
 
 <section class="container page-archives">
 
-    {* No issues have been published *}
-    {if empty($issues)}
+    {if empty($issues)} {* No issues have been published *}
         <div class="page-header page-issue-header">
             {include file="frontend/components/notification.tpl" messageKey="current.noCurrentIssueDesc"}
         </div>
 
-        {* List issues *}
-    {else}
+    {else} {* List issues *}
         {foreach from=$issues item="issue" key="i"}
             {include file="frontend/objects/issue_summary.tpl" heading="h2"}
         {/foreach}
+    {/if}
+</section>
 
+{if $issues}
+    <div class="container">
         {* Pagination *}
         {capture assign="prevUrl"}
             {if $prevPage > 1}
@@ -56,15 +58,14 @@
             {/if}
         {/capture}
         {include
-        			file="frontend/components/pagination.tpl"
-        			prevUrl=$prevUrl|trim
-        			nextUrl=$nextUrl|trim
-        			showingStart=$showingStart
-        			showingEnd=$showingEnd
-        			total=$total
-        		}
-    {/if}
-</section>
-
+    			file="frontend/components/pagination.tpl"
+    			prevUrl=$prevUrl|trim
+    			nextUrl=$nextUrl|trim
+    			showingStart=$showingStart
+    			showingEnd=$showingEnd
+    			total=$total
+    		}
+    </div>
+{/if}
 
 {include file="frontend/components/footer.tpl"}
