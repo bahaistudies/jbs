@@ -37,7 +37,7 @@
 
     {else} {* List issues *}
         {foreach from=$issues item="issue" key="i"}
-            {include file="frontend/objects/issue_summary.tpl" heading="h2" listitem}
+            {include file="frontend/objects/issue_summary.tpl" heading="h2" listitem="true"}
         {/foreach}
     {/if}
 </section>
