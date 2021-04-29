@@ -24,11 +24,11 @@
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
 <header class="page-header page-archives-header">
-    <h1>{$pageTitle}</h1>
+    <h1 id="page-title">{$pageTitle}</h1>
     <a class="btn btn-primary mobile" href="/online/search/" aria-hidden="true">Search Articles</a>
 </header>
 
-<section class="container page-archives" role="list">
+<section class="container page-archives" role="list" aria-labelledby="page-title">
 
     {if empty($issues)} {* No issues have been published *}
         <div class="page-header page-issue-header">
