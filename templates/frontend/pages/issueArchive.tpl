@@ -23,12 +23,12 @@
 {/capture}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
-<section class="container page-archives">
+<header class="page-header page-archives-header">
+    <h1>{$pageTitle}</h1>
+    <a class="btn btn-primary mobile" href="/online/search/" aria-hidden="true">Search Articles</a>
+</header>
 
-    <header class="page-header page-archives-header">
-        <h1>{$pageTitle}</h1>
-        <a class="btn btn-primary mobile" href="/online/search/" aria-hidden="true">Search Articles</a>
-    </header>
+<section class="container page-archives">
 
     {* No issues have been published *}
     {if empty($issues)}
@@ -56,13 +56,13 @@
             {/if}
         {/capture}
         {include
-    			file="frontend/components/pagination.tpl"
-    			prevUrl=$prevUrl|trim
-    			nextUrl=$nextUrl|trim
-    			showingStart=$showingStart
-    			showingEnd=$showingEnd
-    			total=$total
-    		}
+        			file="frontend/components/pagination.tpl"
+        			prevUrl=$prevUrl|trim
+        			nextUrl=$nextUrl|trim
+        			showingStart=$showingStart
+        			showingEnd=$showingEnd
+        			total=$total
+        		}
     {/if}
 </section>
 

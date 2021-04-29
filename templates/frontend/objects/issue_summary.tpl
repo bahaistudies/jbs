@@ -28,7 +28,7 @@
 	{/if}
 {/capture}
 
-<div class="card issue-summary">
+<article class="card issue-summary">
 		<a href="{url op="view" path=$issue->getBestIssueId()}" aria-label="{$issueTitle|escape}">
 	{if $issue->getLocalizedCoverImageUrl()}
 			<img class="card-img-top issue-summary-cover" src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText() != ''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{else}alt="Cover for the {$issueTitle|escape} issue."{/if}>
@@ -54,4 +54,4 @@
 			</div>
 		{/if}
 	</div>
-</div>
+</article>
