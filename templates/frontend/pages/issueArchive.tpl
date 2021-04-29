@@ -15,69 +15,56 @@
  * @uses $total int Count of all published monographs
  *}
 {capture assign="pageTitle"}
-	{if $prevPage}
-		{translate key="archive.archivesPageNumber" pageNumber=$prevPage+1}
-	{else}
-		{translate key="archive.archives"}
-	{/if}
+    {if $prevPage}
+        {translate key="archive.archivesPageNumber" pageNumber=$prevPage+1}
+    {else}
+        {translate key="archive.archives"}
+    {/if}
 {/capture}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
-<div class="container page-archives">
+<section class="container page-archives">
 
-	<div class="page-header page-archives-header">
-		<h1>{$pageTitle}</h1>
-		<a class="btn btn-primary mobile" href="/online/search/">Search Articles</a>
-	</div>
+    <header class="page-header page-archives-header">
+        <h1>{$pageTitle}</h1>
+        <a class="btn btn-primary mobile" href="/online/search/" aria-hidden="true">Search Articles</a>
+    </header>
 
-	{* No issues have been published *}
-	{if empty($issues)}
-		<div class="page-header page-issue-header">
-			{include file="frontend/components/notification.tpl" messageKey="current.noCurrentIssueDesc"}
-		</div>
+    {* No issues have been published *}
+    {if empty($issues)}
+        <div class="page-header page-issue-header">
+            {include file="frontend/components/notification.tpl" messageKey="current.noCurrentIssueDesc"}
+        </div>
 
-	{* List issues *}
-	{else}
-		{foreach from=$issues item="issue" key="i"}
-			{if $i % 4 == 0 && $i > 0}
-				</div>
-				{assign var="open" value=false}
-			{/if}
-			{if $i % 4 == 0}
-				<div class="row justify-content-around">
-				{assign var="open" value=true}
-			{/if}
-			<div class="col-md-3 col-lg-2">
-				{include file="frontend/objects/issue_summary.tpl" heading="h2"}
-			</div>
-		{/foreach}
-		{if $open}
-			</div>{* Close an open row *}
-		{/if}
+        {* List issues *}
+    {else}
+        {foreach from=$issues item="issue" key="i"}
+            {include file="frontend/objects/issue_summary.tpl" heading="h2"}
+        {/foreach}
 
-		{* Pagination *}
-		{capture assign="prevUrl"}
-			{if $prevPage > 1}
-				{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$prevPage}
-			{elseif $prevPage === 1}
-				{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}
-			{/if}
-		{/capture}
-		{capture assign="nextUrl"}
-			{if $nextPage}
-				{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$nextPage}
-			{/if}
-		{/capture}
-		{include
-			file="frontend/components/pagination.tpl"
-			prevUrl=$prevUrl|trim
-			nextUrl=$nextUrl|trim
-			showingStart=$showingStart
-			showingEnd=$showingEnd
-			total=$total
-		}
-	{/if}
-</div>
+        {* Pagination *}
+        {capture assign="prevUrl"}
+            {if $prevPage > 1}
+                {url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$prevPage}
+            {elseif $prevPage === 1}
+                {url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}
+            {/if}
+        {/capture}
+        {capture assign="nextUrl"}
+            {if $nextPage}
+                {url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$nextPage}
+            {/if}
+        {/capture}
+        {include
+    			file="frontend/components/pagination.tpl"
+    			prevUrl=$prevUrl|trim
+    			nextUrl=$nextUrl|trim
+    			showingStart=$showingStart
+    			showingEnd=$showingEnd
+    			total=$total
+    		}
+    {/if}
+</section>
 
 
 {include file="frontend/components/footer.tpl"}
