@@ -18,8 +18,8 @@
 	<nav aria-label="{translate|escape key="common.pagination.label"}">
 		<ul class="pagination justify-content-center">
 			<li class="page-item{if !$prevUrl} disabled{/if}">
-				<a class="page-link" href="{$prevUrl}">
-					<span aria-hidden="true">&larr;</span>
+				<a class="page-link" href="{$prevUrl}" aria-label="{translate key="common.pagination.previous"}">
+					<span aria-hidden="true">&#129044;</span>
 					{translate key="help.previous"}
 				</a>
 			</li>
@@ -29,9 +29,9 @@
 				</span>
 			</li>
 			<li class="page-item{if !$nextUrl} disabled{/if}">
-				<a class="page-link" href="{$nextUrl}">
+				<a class="page-link" href="{$nextUrl}" {if !$nextUrl}aria-disabled="true"{/if} aria-label="{translate key="common.pagination.next"}">
 					{translate key="help.next"}
-					<span aria-hidden="true">&rarr;</span>
+					<span aria-hidden="true">&#129046;</span>
 				</a>
 			</li>
 		</ul>
