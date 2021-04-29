@@ -28,7 +28,7 @@
     <a class="btn btn-primary mobile" href="/online/search/" aria-hidden="true">Search Articles</a>
 </header>
 
-<section class="container page-archives">
+<section class="container page-archives" role="list">
 
     {if empty($issues)} {* No issues have been published *}
         <div class="page-header page-issue-header">
@@ -37,7 +37,7 @@
 
     {else} {* List issues *}
         {foreach from=$issues item="issue" key="i"}
-            {include file="frontend/objects/issue_summary.tpl" heading="h2"}
+            {include file="frontend/objects/issue_summary.tpl" heading="h2" listitem}
         {/foreach}
     {/if}
 </section>
