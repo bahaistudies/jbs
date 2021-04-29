@@ -18,7 +18,7 @@
 	<nav aria-label="{translate|escape key="common.pagination.label"}">
 		<ul class="pagination justify-content-center">
 			<li class="page-item{if !$prevUrl} disabled{/if}">
-				<a class="page-link" href="{$prevUrl}" aria-label="{translate key="common.pagination.previous"}">
+				<a class="page-link" href="{$prevUrl}" {if !$prevUrl}aria-disabled="true"{/if} aria-label="{translate key="common.pagination.previous"}">
 					<span aria-hidden="true">&#129044;</span>
 					{translate key="help.previous"}
 				</a>
