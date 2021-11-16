@@ -47,8 +47,8 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="button" id="adv-toggle"
-                            onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
+                        {* <button class="btn" type="button" id="adv-toggle"
+                            onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button> *}
                         <script type="text/javascript">
                             function toggle_visibility(id) {
                                 var advanced = document.getElementById(id);
@@ -63,7 +63,7 @@
                             }
                         </script>
                     </div>
-                    <div class="advanced-queries" id="advanced" style="display: none;">
+                    <!-- <div class="advanced-queries" id="advanced" style="display: none;">
                         {* <h2>{translate key="search.advancedFilters"}</h2> *}
                         <div class="form-group form-group-title">
                             <label for="title">
@@ -94,7 +94,7 @@
                                 {html_select_date class="form-control" prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="Year" month_empty="Month" day_empty="Day" field_order="YMD"}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
