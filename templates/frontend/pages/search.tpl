@@ -51,8 +51,8 @@
                             onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
                             function toggle_visibility(id) {
-                                var advanced = document.getElementById(id);
-                                var button = document.getElementById('adv-toggle');
+                                let advanced = document.getElementById(id);
+                                let button = document.getElementById('adv-toggle');
                                 if (advanced.style.display == 'grid') {
                                     advanced.style.display = 'none';
                                     button.classList.remove("enabled");
