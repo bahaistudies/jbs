@@ -101,9 +101,9 @@
             </div>
         </div>
         <div class="search-col-results">
-            <div class="search-results">
-                {* No results found *}
-                {if $results->wasEmpty()}
+            {* No results found *}
+            {if $results->wasEmpty()}
+                <div class="search-results">
                     {if $error}
                         <div class="alert alert-danger" role="alert">{$error|escape}</div>
                     {else}
@@ -113,19 +113,18 @@
 
                 {* Results and pagination *}
             {elseif $results}
-                {iterate from=results item=result}
-                {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
-                {/iterate}
-            </div>
-            <div class="pagination">
-                {page_info iterator=$results}
-                {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-            </div>
-        {else}
+                <div class="search-results">
+                    {iterate from=results item=result}
+                    {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
+                    {/iterate}
+                </div>
+                <div class="pagination">
+                    {page_info iterator=$results}
+                    {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+                </div>
+            {/if}
         </div>
-    {/if}
-</div>
-</div>
+    </div>
 </div>
 {include file="frontend/objects/clickable_cards.tpl"}
 {include file="frontend/components/footer.tpl"}
