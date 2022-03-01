@@ -63,8 +63,7 @@
                             }
                         </script>
                     </div>
-                    <div class="advanced-queries" id="advanced" style="display: none;">
-                        {* <h2>{translate key="search.advancedFilters"}</h2> *}
+                    {* <div class="advanced-queries" id="advanced" style="display: none;">
                         <div class="form-group form-group-title">
                             <label for="title">
                                 {translate key="search.title"}
@@ -94,22 +93,22 @@
                                 {html_select_date class="form-control" prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="Year" month_empty="Month" day_empty="Day" field_order="YMD"}
                             </div>
                         </div>
-                    </div>
+                    </div> *}
                 </form>
             </div>
         </div>
         <div class="search-col-results">
             <div class="search-results">
                 {* No results found *}
-            {if $results->wasEmpty()}
-                {if $error}
-                    <div class="alert alert-danger" role="alert">{$error|escape}</div>
-                {else}
-                    <div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
-                {/if}
-            </div>
+                {if $results->wasEmpty()}
+                    {if $error}
+                        <div class="alert alert-danger" role="alert">{$error|escape}</div>
+                    {else}
+                        <div class="alert alert-primary" role="alert">{translate key="search.noResults"}</div>
+                    {/if}
+                </div>
 
-            {* Results and pagination *}
+                {* Results and pagination *}
             {elseif $results}
                 {iterate from=results item=result}
                 {include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true}
@@ -119,10 +118,10 @@
                 {page_info iterator=$results}
                 {page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
             </div>
-            {else}
-            </div>
-            {/if}
-    </div>
+        {else}
+        </div>
+    {/if}
+</div>
 </div>
 </div>
 {include file="frontend/objects/clickable_cards.tpl"}
