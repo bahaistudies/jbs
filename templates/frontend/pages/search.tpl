@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        <button class="btn" type="button" id="adv-toggle"
+                        {* <button class="btn" type="button" id="adv-toggle"
                             onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
                             function toggle_visibility(id) {
@@ -61,7 +61,7 @@
                                     button.classList.add("enabled");
                                 }
                             }
-                        </script>
+                        </script> *}
                     </div>
                     {* <div class="advanced-queries" id="advanced" style="display: none;">
                         <div class="form-group form-group-title">
