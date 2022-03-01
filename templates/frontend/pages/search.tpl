@@ -33,6 +33,7 @@
             <div class="search-filters">
 
                 {capture name="searchFormUrl"}{url op="search" escape=false}{/capture}
+                {assign var=formUrlParameters value=""}{* Avoid "Creating default object from empty value" warning *}
                 {$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
                 <form class="form-search" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
                     {foreach from=$formUrlParameters key=paramKey item=paramValue}
@@ -47,7 +48,7 @@
                     </div>
                     <div class="form-group form-group-buttons">
                         <button class="btn btn-primary" type="submit">{translate key="common.search"}</button>
-                        {* <button class="btn" type="button" id="adv-toggle"
+                        <button class="btn" type="button" id="adv-toggle"
                             onclick="toggle_visibility('advanced');">{translate key="search.advancedFilters"}</button>
                         <script type="text/javascript">
                             function toggle_visibility(id) {
@@ -61,9 +62,9 @@
                                     button.classList.add("enabled");
                                 }
                             }
-                        </script> *}
+                        </script>
                     </div>
-                    {* <div class="advanced-queries" id="advanced" style="display: none;">
+                    <div class="advanced-queries" id="advanced" style="display: none;">
                         <div class="form-group form-group-title">
                             <label for="title">
                                 {translate key="search.title"}
@@ -93,7 +94,7 @@
                                 {html_select_date class="form-control" prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="Year" month_empty="Month" day_empty="Day" field_order="YMD"}
                             </div>
                         </div>
-                    </div> *}
+                    </div>
                 </form>
             </div>
         </div>
